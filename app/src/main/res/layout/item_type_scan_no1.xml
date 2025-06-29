@@ -27,7 +27,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <com.scanqr.qrscanner.qrgenerator.utils.MovableTextNo1
+        <com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.MovableTextNo1
             android:id="@+id/tv_type_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace 'com.scanqr.qrscanner.qrgenerator'
+    namespace 'com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator'
     compileSdk 34
 
     defaultConfig {

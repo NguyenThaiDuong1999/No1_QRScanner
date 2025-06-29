@@ -13,7 +13,7 @@
         android:layout_marginTop="@dimen/_22sdp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.scanqr.qrscanner.qrgenerator.utils.MovableTextNo1
+        <com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.MovableTextNo1
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
