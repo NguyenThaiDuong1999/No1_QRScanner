@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">Permiso denegado</string>
     <string name="Your_opinion_matter_to_us">¡Tu opinión es importante para nosotros!</string>
     <string name="If_you_enjoy_our">Si disfrutas de nuestro escáner QR, ¿te importaría calificarnos en Google Play?</string>
-    <string name="title_create">Crear código QR</string>
-    <string name="desc_create">¿Qué deseas crear como código QR?</string>
     <string name="title_history">Historial</string>
     <string name="desc_history">¿Qué historial de códigos QR necesitas?</string>
     <string name="Writing_something">Escribiendo algo</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">Sin conexión a internet</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">¡No hay conexión a internet! Por favor, revisa tu conexión a internet.</string>
     <string name="try_again">Intentar de nuevo</string>
-    <string name="intro_desc_1">Escaneo rápido de QR</string>
-    <string name="intro_content_1">Experimenta un escaneo de códigos QR de alta velocidad y precisión.</string>
-    <string name="intro_desc_2">Crea tu propio QR</string>
-    <string name="intro_content_2">Genera fácilmente códigos QR personalizados para enlaces, texto y más.</string>
-    <string name="intro_desc_3">Escanea cualquier código QR</string>
-    <string name="intro_content_3">Escanea rápidamente códigos QR para acceder al contenido al instante.</string>
+
+    <string name="intro_desc_1">🚀 escanear códigos QR en un flash</string>
+    <string name="intro_content_1">Escaneo de rayo que lo lleva a donde desea, con la instancia y precisión.</string>
+    <string name="intro_desc_2">✏️ Haga su propio código QR</string>
+    <string name="intro_content_2">Convierta los enlaces, el texto y más en códigos QR personalizados en segundos, lo que es fácil.</string>
+    <string name="intro_desc_3">📲 Desbloquear cualquier cosa con un escaneo</string>
+    <string name="intro_content_3">Punte, escanee y vaya: sitios web de acceso, archivos e información en un corazón.</string>
+    <string name="customize_your_qr_code">🎨 Diseña tu QR, tu camino</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Agregue colores, logotipos y estilo para hacer que sus códigos QR sean realmente suyos.</string>
+
     <string name="create_qr_code">Crear código QR</string>
     <string name="suggest_for_you">Sugerido para ti</string>
     <string name="other">Otro</string>
@@ -181,8 +183,6 @@
     <string name="color">Color</string>
     <string name="logo">Logo</string>
     <string name="template">Plantilla</string>
-    <string name="customize_your_qr_code">Personaliza tu código QR</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Personaliza tus códigos QR con colores, logos y estilos</string>
     <string name="please_select_language_to_continue">Por favor, selecciona un idioma para continuar</string>
     <string name="what_problems_do_you_encounter_during_use">¿Qué problemas encuentras durante el uso?</string>
     <string name="not_much_more_useful_than_the_default_features">No es mucho más útil que las características predeterminadas</string>

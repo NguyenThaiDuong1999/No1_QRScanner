@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">權限被拒絕</string>
     <string name="Your_opinion_matter_to_us">您的意見對我們很重要！</string>
     <string name="If_you_enjoy_our">如果您喜歡我們的二維碼掃描儀，您介意在 Google Play 上為我們評分嗎？</string>
-    <string name="title_create">建立二維碼</string>
-    <string name="desc_create">您想建立什麼二維碼？</string>
     <string name="title_history">歷史</string>
     <string name="desc_history">您需要哪一個二維碼歷史記錄？</string>
     <string name="Writing_something">寫一些東西</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">沒有網路</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">沒有網路連線！請檢查您的網路連線！</string>
     <string name="try_again">再試一次</string>
-    <string name="intro_desc_1">快速二維碼掃描</string>
-    <string name="intro_content_1">體驗高速、精準的二維碼掃描。</string>
-    <string name="intro_desc_2">建立您自己的二維碼</string>
-    <string name="intro_content_2">輕鬆為連結、文字等產生自訂二維碼。</string>
-    <string name="intro_desc_3">掃描任一二維碼</string>
-    <string name="intro_content_3">快速掃描二維碼即可立即存取內容。</string>
+
+    <string name="intro_desc_1">🚀掃描QR代碼</string>
+    <string name="intro_content_1">閃電掃描，可將您帶到您想要的位置。</string>
+    <string name="intro_desc_2">✏️製作自己的QR代碼</string>
+    <string name="intro_content_2">將鏈接，文本以及更多鏈接到自定義的QR碼中，這很容易。</string>
+    <string name="intro_desc_3">📲通過掃描解鎖任何東西</string>
+    <string name="intro_content_3">心跳中的網站，文件和信息，點，掃描和GO。</string>
+    <string name="customize_your_qr_code">🎨設計QR，您的方式</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">添加顏色，徽標和样式，以使您的QR碼真正您的QR碼。</string>
+
     <string name="create_qr_code">建立二維碼</string>
     <string name="suggest_for_you">為您推薦</string>
     <string name="other">其他</string>
@@ -181,8 +183,6 @@
     <string name="color">顏色</string>
     <string name="logo">標識</string>
     <string name="template">範本</string>
-    <string name="customize_your_qr_code">自訂您的二維碼</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">使用顏色、徽標和樣式個性化您的二維碼</string>
     <string name="please_select_language_to_continue">請選擇語言以繼續</string>
     <string name="what_problems_do_you_encounter_during_use">您在使用過程中遇到了哪些問題？</string>
     <string name="not_much_more_useful_than_the_default_features">比預設功能沒用多少</string>

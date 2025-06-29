@@ -9,21 +9,21 @@
             android:fillColor="#00000000"
             android:pathData="M3.833,14.167V15.833C3.833,16.275 4.009,16.699 4.321,17.012C4.634,17.324 5.058,17.5 5.5,17.5H15.5C15.942,17.5 16.366,17.324 16.678,17.012C16.991,16.699 17.166,16.275 17.166,15.833V14.167"
             android:strokeWidth="1.5"
-            android:strokeColor="#ffffff"
+            android:strokeColor="@color/app_color"
             android:strokeLineCap="round"
             android:strokeLineJoin="round" />
         <path
             android:fillColor="#00000000"
             android:pathData="M6.333,9.167L10.5,13.333L14.666,9.167"
             android:strokeWidth="1.5"
-            android:strokeColor="#ffffff"
+            android:strokeColor="@color/app_color"
             android:strokeLineCap="round"
             android:strokeLineJoin="round" />
         <path
             android:fillColor="#00000000"
             android:pathData="M10.5,3.333V13.333"
             android:strokeWidth="1.5"
-            android:strokeColor="#ffffff"
+            android:strokeColor="@color/app_color"
             android:strokeLineCap="round"
             android:strokeLineJoin="round" />
     </group>

@@ -49,11 +49,11 @@
 
 
         <receiver
-            android:name=".feature.main.create.widget.AppWidgetPinnedReceiver"
+            android:name=".feature.main.create.widget.AppWidgetPinnedReceiverNo1"
             android:exported="false" />
 
         <receiver
-            android:name=".feature.main.create.widget.CodeWidgetProvider"
+            android:name=".feature.main.create.widget.CodeWidgetProviderNo1"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -65,7 +65,7 @@
 
 
         <receiver
-            android:name=".no_internet.NetworkReceiver"
+            android:name=".no_internet.NetworkReceiverNo1"
             android:exported="true"
             tools:ignore="Instantiatable">
             <intent-filter>
@@ -74,7 +74,7 @@
         </receiver>
 
         <activity
-            android:name=".no_internet.NoInternetActivity"
+            android:name=".no_internet.NoInternetNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
@@ -89,34 +89,34 @@
         </provider>
 
         <activity
-            android:name=".feature.main.MainActivity"
+            android:name=".feature.main.MainNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
-            android:name=".feature.scan.batch.ScanBatchResultActivity"
+            android:name=".feature.scan.batch.ScanBatchResultNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.scan.ScanActivity"
+            android:name=".feature.scan.ScanNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.main.create.CreateActivity"
+            android:name=".feature.main.create.CreateNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.result_scan.ScanResultActivity"
+            android:name=".feature.result_scan.ScanResultNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin">
@@ -129,66 +129,66 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.intro.IntroActivity"
+            android:name=".feature.intro.IntroNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.setting.PolicyActivity"
+            android:name=".feature.setting.PolicyNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.language_start.LanguageStartActivity"
+            android:name=".feature.language_start.LanguageStartNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.setting.SettingActivity"
+            android:name=".feature.setting.SettingNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.language.LanguageActivity"
+            android:name=".feature.language.LanguageNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.language_start_new.LanguageStartNewActivity"
+            android:name=".feature.language_start_new.LanguageNo1StartNewNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.template.TemplateActivity"
+            android:name=".feature.template.TemplateNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.permission.PermissionActivity"
+            android:name=".feature.permission.PermissionNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.uninstall.ProblemActivity"
+            android:name=".feature.uninstall.ProblemNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.uninstall.UninstallActivity"
+            android:name=".feature.uninstall.UninstallNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.splash.SplashActivity"
+            android:name=".feature.splash.SplashNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
 
             <meta-data
                 android:name="android.app.shortcuts"

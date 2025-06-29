@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">権限が拒否されました</string>
     <string name="Your_opinion_matter_to_us">お客様のご意見は私たちにとって重要です!</string>
     <string name="If_you_enjoy_our">QR スキャナーを気に入っていただけましたら、Google Play で評価していただけませんか?</string>
-    <string name="title_create">QR コードを作成</string>
-    <string name="desc_create">QR コードで何を作成しますか?</string>
     <string name="title_history">履歴</string>
     <string name="desc_history">どのQRコード履歴が必要ですか?</string>
     <string name="Writing_something">何かを書き込む</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">インターネットがありません</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">インターネットに接続されていません! インターネット接続を確認してください!</string>
     <string name="try_again">もう一度お試しください</string>
-    <string name="intro_desc_1">高速 QR スキャン</string>
-    <string name="intro_content_1">高速で正確な QR コード スキャンを体験してください。</string>
-    <string name="intro_desc_2">独自の QR を作成</string>
-    <string name="intro_content_2">リンク、テキストなどのカスタム QR コードを簡単に生成できます。</string>
-    <string name="intro_desc_3">任意の QR コードをスキャン</string>
-    <string name="intro_content_3">QR コードをすばやくスキャンして、コンテンツに即座にアクセスできます。</string>
+
+    <string name="intro_desc_1">flash QRコードをフラッシュでスキャンします</string>
+    <string name="intro_content_1">あなたが望む場所に、そして正確にあなたが望む場所に到達する雷の速いスキャン。</string>
+    <string name="intro_desc_2">✏️独自のQRコードを作成します</string>
+    <string name="intro_content_2">リンク、テキストなどを数秒でカスタムQRコードに変換します。それは簡単です。</string>
+    <string name="intro_desc_3">scanスキャンで何でもロックを解除します</string>
+    <string name="intro_content_3">ポイント、スキャン、およびゴー - ハートビートでWebサイト、ファイル、情報をアクセスします。</string>
+    <string name="customize_your_qr_code">cr、QR、あなたのやり方を設計します</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">色、ロゴ、スタイルを追加して、QRコードを本当にあなたのものにします。</string>
+
     <string name="create_qr_code">QR コードを作成</string>
     <string name="suggest_for_you">あなたにおすすめ</string>
     <string name="other">その他</string>
@@ -181,8 +183,6 @@
     <string name="color">色</string>
     <string name="logo">ロゴ</string>
     <string name="template">テンプレート</string>
-    <string name="customize_your_qr_code">QR コードをカスタマイズ</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">色、ロゴ、スタイルで QR コードをカスタマイズします</string>
     <string name="please_select_language_to_continue">続行するには言語を選択してください</string>
     <string name="what_problems_do_you_encounter_during_use">使用中にどのような問題に直面しますか？</string>
     <string name="not_much_more_useful_than_the_default_features">デフォルトの機能よりあまり役に立たない</string>

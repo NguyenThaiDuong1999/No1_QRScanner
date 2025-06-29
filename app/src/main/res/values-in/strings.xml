@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">Izin ditolak</string>
     <string name="Your_opinion_matter_to_us">Pendapat Anda Penting Bagi Kami!</string>
     <string name="If_you_enjoy_our">Jika Anda menyukai Pemindai QR kami, apakah Anda berkenan memberi kami peringkat di Google Play?</string>
-    <string name="title_create">Buat Kode QR</string>
-    <string name="desc_create">Apa yang ingin Anda buat Kode QR?</string>
     <string name="title_history">Riwayat</string>
     <string name="desc_history">Riwayat kode QR apa yang Anda perlukan?</string>
     <string name="Writing_something">Menulis sesuatu</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">Tidak ada internet</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">Tidak ada koneksi internet! Harap periksa koneksi internet Anda!</string>
     <string name="try_again">Coba lagi</string>
-    <string name="intro_desc_1">Pemindaian QR Cepat</string>
-    <string name="intro_content_1">Rasakan pemindaian kode QR berkecepatan tinggi dengan akurasi.</string>
-    <string name="intro_desc_2">Buat QR Anda Sendiri</string>
-    <string name="intro_content_2">Buat kode QR khusus dengan mudah untuk tautan, teks, dan lainnya.</string>
-    <string name="intro_desc_3">Pindai Kode QR Apa Pun</string>
-    <string name="intro_content_3">Pindai kode QR dengan cepat untuk mengakses konten secara instan. Buat Kode QR</string>
+
+    <string name="intro_desc_1">🚀 Pindai kode QR dalam sekejap</string>
+    <string name="intro_content_1">Pemindaian cepat kilat yang membuat Anda berada di tempat yang Anda inginkan-secara akurat dan akurat.</string>
+    <string name="intro_desc_2">✏️ Buat kode QR Anda sendiri</string>
+    <string name="intro_content_2">Putar tautan, teks, dan lebih banyak lagi ke kode QR khusus dalam hitungan detik - semudah itu.</string>
+    <string name="intro_desc_3">📲 Buka kunci apa pun dengan pemindaian</string>
+    <string name="intro_content_3">Titik, pindai, dan go - akses situs web, file, dan info dalam sekejap.</string>
+    <string name="customize_your_qr_code">🎨 Desain QR Anda, jalan Anda</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Tambahkan warna, logo, dan gaya untuk membuat kode QR Anda benar -benar milik Anda.</string>
+
     <string name="create_qr_code">Sarankan untuk Anda</string>
     <string name="suggest_for_you">Saran untuk Anda</string>
     <string name="other">Lainnya</string>
@@ -181,8 +183,6 @@
     <string name="color">Warna</string>
     <string name="logo">Logo</string>
     <string name="template">Template</string>
-    <string name="customize_your_qr_code">Sesuaikan Kode QR Anda</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Personalisasikan kode QR Anda dengan warna, logo, dan gaya</string>
     <string name="please_select_language_to_continue">Silakan pilih bahasa untuk melanjutkan</string>
 
     <string name="what_problems_do_you_encounter_during_use">Masalah apa yang Anda temui saat menggunakan aplikasi?</string>

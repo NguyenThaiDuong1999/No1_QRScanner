@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">অনুমতি অস্বীকার করা হয়েছে</string>
     <string name="Your_opinion_matter_to_us">আপনার মতামত আমাদের কাছে গুরুত্বপূর্ণ!</string>
     <string name="If_you_enjoy_our">যদি আপনি আমাদের QR স্ক্যানার উপভোগ করেন, তাহলে আপনি কি আমাদের গুগল প্লে তে রেট করবেন?</string>
-    <string name="title_create">QR কোড তৈরি করুন</string>
-    <string name="desc_create">আপনি কী QR কোড তৈরি করতে চান?</string>
     <string name="title_history">ইতিহাস</string>
     <string name="desc_history">আপনার কোন QR কোড ইতিহাসের প্রয়োজন?</string>
     <string name="Writing_something">কিছু লিখুন</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">কোনো ইন্টারনেট নেই</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">কোনো ইন্টারনেট সংযোগ নেই! আপনার ইন্টারনেট সংযোগ পরীক্ষা করুন!</string>
     <string name="try_again">পুনরায় চেষ্টা করুন</string>
-    <string name="intro_desc_1">দ্রুত QR স্ক্যানিং</string>
-    <string name="intro_content_1">নির্ভুলতার সাথে উচ্চ গতির QR কোড স্ক্যানিং উপভোগ করুন।</string>
-    <string name="intro_desc_2">আপনার নিজস্ব QR তৈরি করুন</string>
-    <string name="intro_content_2">লিঙ্ক, টেক্সট এবং আরও কিছু জন্য সহজেই কাস্টম QR কোড তৈরি করুন।</string>
-    <string name="intro_desc_3">যেকোনো QR কোড স্ক্যান করুন</string>
-    <string name="intro_content_3">তাত্ক্ষণিকভাবে কনটেন্ট অ্যাক্সেস করতে দ্রুত QR কোড স্ক্যান করুন।</string>
+
+    <string name="intro_desc_1">A একটি ফ্ল্যাশে কিউআর কোডগুলি স্ক্যান করুন</string>
+    <string name="intro_content_1">বজ্রপাতের দ্রুত স্ক্যানিং যা আপনাকে যেখানে চান সেখানে পৌঁছে দেয়-মূলত এবং নির্ভুলভাবে।</string>
+    <string name="intro_desc_2">Your আপনার নিজের কিউআর কোড তৈরি করুন</string>
+    <string name="intro_content_2">লিঙ্কগুলি, পাঠ্য এবং আরও কয়েক সেকেন্ডে কাস্টম কিউআর কোডগুলিতে পরিণত করুন - এটি এত সহজ।</string>
+    <string name="intro_desc_3">A একটি স্ক্যান দিয়ে কিছু আনলক করুন</string>
+    <string name="intro_content_3">পয়েন্ট, স্ক্যান, এবং যান - অ্যাক্সেস ওয়েবসাইট, ফাইল এবং তথ্য হার্টবিটে।</string>
+    <string name="customize_your_qr_code">Your আপনার কিউআর ডিজাইন করুন, আপনার উপায়</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">আপনার কিউআর কোডগুলি সত্যই আপনার তৈরি করতে রঙ, লোগো এবং স্টাইল যুক্ত করুন।</string>
+
     <string name="create_qr_code">QR কোড তৈরি করুন</string>
     <string name="suggest_for_you">আপনার জন্য পরামর্শ</string>
     <string name="other">অন্যান্য</string>
@@ -181,8 +183,6 @@
     <string name="color">রঙ</string>
     <string name="logo">লোগো</string>
     <string name="template">টেমপ্লেট</string>
-    <string name="customize_your_qr_code">আপনার QR কোড কাস্টমাইজ করুন</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">আপনার QR কোডগুলি রঙ, লোগো এবং শৈলীতে কাস্টমাইজ করুন</string>
     <string name="please_select_language_to_continue">অনুগ্রহ করে চালিয়ে যেতে ভাষা নির্বাচন করুন</string>
 
     <string name="what_problems_do_you_encounter_during_use">ব্যবহারের সময় আপনি কোন সমস্যাগুলির সম্মুখীন হন?</string>

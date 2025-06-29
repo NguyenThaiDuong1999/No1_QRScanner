@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">تم رفض الإذن</string>
     <string name="Your_opinion_matter_to_us">رأيك مهم بالنسبة لنا!</string>
     <string name="If_you_enjoy_our">إذا كنت تستمتع بتطبيق الماسح الضوئي للرموز، هل تمانع في تقييمنا على متجر جوجل بلاي؟</string>
-    <string name="title_create">إنشاء رمز الاستجابة السريعة</string>
-    <string name="desc_create">ماذا ترغب في إنشاء رمز استجابة سريعة له؟</string>
     <string name="title_history">التاريخ</string>
     <string name="desc_history">ما هو سجل رمز الاستجابة السريعة الذي تحتاجه؟</string>
     <string name="Writing_something">كتابة شيء ما</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">لا يوجد إنترنت</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">لا يوجد اتصال بالإنترنت! يرجى التحقق من اتصالك بالإنترنت!</string>
     <string name="try_again">حاول مرة أخرى</string>
-    <string name="intro_desc_1">مسح QR بسرعة</string>
-    <string name="intro_content_1">اختبر مسح رموز QR بسرعة ودقة.</string>
-    <string name="intro_desc_2">أنشئ رمز QR الخاص بك</string>
-    <string name="intro_content_2">قم بإنشاء رموز QR مخصصة للروابط والنصوص والمزيد.</string>
-    <string name="intro_desc_3">امسح أي رمز QR</string>
-    <string name="intro_content_3">امسح رموز QR بسرعة للوصول إلى المحتوى على الفور.</string>
+
+    <string name="intro_desc_1">🚀 مسح رموز QR في فلاش</string>
+    <string name="intro_content_1">المسح السري للبرق الذي يجعلك حيث تريد-بدقة ودقة.</string>
+    <string name="intro_desc_2">✏ اصنع رمز الاستجابة السريعة الخاصة بك</string>
+    <string name="intro_content_2">قم بتشغيل الروابط والنصوص والمزيد إلى رموز QR مخصصة في ثوانٍ - إنها بهذه السهولة.</string>
+    <string name="intro_desc_3">📲 فتح أي شيء بالمسح</string>
+    <string name="intro_content_3">قم بالمسح الضوئي ، والمسح ، والانتقال إلى مواقع الويب والملفات والمعلومات في نبضات القلب.</string>
+    <string name="customize_your_qr_code">🎨 صمم QR الخاص بك ، طريقك</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">أضف الألوان والشعارات والأناقة لجعل رموز QR الخاصة بك حقًا لك.</string>
+
     <string name="create_qr_code">إنشاء رمز QR</string>
     <string name="suggest_for_you">اقتراح لك</string>
     <string name="other">آخر</string>
@@ -181,8 +183,6 @@
     <string name="color">اللون</string>
     <string name="logo">الشعار</string>
     <string name="template">القالب</string>
-    <string name="customize_your_qr_code">تخصيص رمز QR الخاص بك</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">قم بتخصيص رموز QR الخاصة بك باستخدام الألوان والشعارات والأنماط</string>
     <string name="please_select_language_to_continue">يرجى تحديد اللغة للمتابعة</string>
 
     <string name="what_problems_do_you_encounter_during_use">ما المشاكل التي تواجهها أثناء الاستخدام؟</string>

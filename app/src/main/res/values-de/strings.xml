@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">Berechtigung verweigert</string>
     <string name="Your_opinion_matter_to_us">Ihre Meinung ist uns wichtig!</string>
     <string name="If_you_enjoy_our">Wenn Ihnen unser QR-Scanner gefällt, könnten Sie uns bitte eine Bewertung im Google Play Store hinterlassen?</string>
-    <string name="title_create">QR-Code erstellen</string>
-    <string name="desc_create">Was möchten Sie für einen QR-Code erstellen?</string>
     <string name="title_history">Verlauf</string>
     <string name="desc_history">Welchen QR-Code-Verlauf benötigen Sie?</string>
     <string name="Writing_something">Etwas schreiben</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">Kein Internet</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">Es gibt keine Internetverbindung! Bitte überprüfen Sie Ihre Internetverbindung!</string>
     <string name="try_again">Erneut versuchen</string>
-    <string name="intro_desc_1">Schnelles QR-Scannen</string>
-    <string name="intro_content_1">Genießen Sie schnelles QR-Scannen mit hoher Präzision.</string>
-    <string name="intro_desc_2">Erstellen Sie Ihre eigenen QR-Codes</string>
-    <string name="intro_content_2">Erstellen Sie einfach benutzerdefinierte QR-Codes für Links, Texte und mehr.</string>
-    <string name="intro_desc_3">Scannen Sie jeden QR-Code</string>
-    <string name="intro_content_3">Scannen Sie QR-Codes, um sofort auf Inhalte zuzugreifen.</string>
+
+    <string name="intro_desc_1">🚀 scannen QR -Codes in einem Blitz</string>
+    <string name="intro_content_1">Blitzschnelles Scannen, der Sie dorthin bringt, wo Sie wollen-instant und genau.</string>
+    <string name="intro_desc_2">✏️ Machen Sie Ihren eigenen QR -Code</string>
+    <string name="intro_content_2">Verwandeln Sie Links, Text und mehr in benutzerdefinierten QR -Codes in Sekunden - es ist so einfach.</string>
+    <string name="intro_desc_3">📲 Entsperren Sie etwas mit einem Scan</string>
+    <string name="intro_content_3">Punkte, scannen und go -access -Websites, -dateien und Informationen sofort.</string>
+    <string name="customize_your_qr_code">🎨 Entwerfen Sie Ihren QR, Ihren Weg</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Fügen Sie Farben, Logos und Stil hinzu, um Ihre QR -Codes wirklich zu Ihren Codes zu machen.</string>
+
     <string name="create_qr_code">QR-Code erstellen</string>
     <string name="suggest_for_you">Vorgeschlagen für Sie</string>
     <string name="other">Andere</string>
@@ -181,8 +183,6 @@
     <string name="color">Farbe</string>
     <string name="logo">Logo</string>
     <string name="template">Vorlage</string>
-    <string name="customize_your_qr_code">Gestalten Sie Ihren QR-Code</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Passen Sie Ihre QR-Codes mit Farben, Logos und Stilen an</string>
     <string name="please_select_language_to_continue">Bitte wählen Sie eine Sprache aus, um fortzufahren</string>
 
     <string name="what_problems_do_you_encounter_during_use">Welche Probleme treten während der Nutzung auf?</string>

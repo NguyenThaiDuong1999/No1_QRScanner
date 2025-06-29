@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">В разрешении отказано</string>
     <string name="Your_opinion_matter_to_us">Ваше мнение важно для нас!</string>
     <string name="If_you_enjoy_our">Если вам нравится наш QR-сканер, не могли бы вы оценить нас в Google Play?</string>
-    <string name="title_create">Создать QR-код</string>
-    <string name="desc_create">Что вы хотите создать QR-код?</string>
     <string name="title_history">История</string>
     <string name="desc_history">Какая история QR-кода вам нужна?</string>
     <string name="Writing_something">Написать что-нибудь</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">Нет интернета</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">Нет подключения к интернету! Проверьте подключение к интернету!</string>
     <string name="try_again">Попробуйте еще раз</string>
-    <string name="intro_desc_1">Быстрое сканирование QR-кодов</string>
-    <string name="intro_content_1">Испытайте высокоскоростное сканирование QR-кодов с точностью.</string>
-    <string name="intro_desc_2">Создайте свой собственный QR-код</string>
-    <string name="intro_content_2">Легко создавайте собственные QR-коды для ссылок, текста и многого другого.</string>
-    <string name="intro_desc_3">Сканируйте любой QR-код</string>
-    <string name="intro_content_3">Быстро сканируйте QR-коды, чтобы мгновенно получить доступ к контенту.</string>
+
+    <string name="intro_desc_1">🚀 Сканировать QR -коды во вспышке</string>
+    <string name="intro_content_1">Молническое сканирование, которое приводит вас туда, где вы хотите-постоянно и точно.</string>
+    <string name="intro_desc_2">✏ Сделайте свой собственный QR -код</string>
+    <string name="intro_content_2">Поверните ссылки, текст и многое другое в пользовательские QR -коды за считанные секунды - это так просто.</string>
+    <string name="intro_desc_3">📲 Разблокируйте что угодно с помощью сканирования</string>
+    <string name="intro_content_3">Начиная, сканируйте и отправляйтесь - Access Sebsites, Files и Info в одно мгновение.</string>
+    <string name="customize_your_qr_code">🎨 Создайте свой QR, ваш путь</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Добавьте цвета, логотипы и стиль, чтобы сделать ваши QR -коды по -настоящему вашими.</string>
+
     <string name="create_qr_code">Создать QR-код</string>
     <string name="suggest_for_you">Предложить вам</string>
     <string name="other">Другое</string>
@@ -181,8 +183,6 @@
     <string name="color">Цвет</string>
     <string name="logo">Логотип</string>
     <string name="template">Шаблон</string>
-    <string name="customize_your_qr_code">Настройте свой QR-код</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Персонализируйте свои QR-коды с помощью цветов, логотипов и стилей</string>
     <string name="please_select_language_to_continue">Выберите язык, чтобы продолжить</string>
     <string name="what_problems_do_you_encounter_during_use">С какими проблемами вы сталкиваетесь при использовании?</string>
     <string name="not_much_more_useful_than_the_default_features">Не намного полезнее, чем стандартные функции</string>

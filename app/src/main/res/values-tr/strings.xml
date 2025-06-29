@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">İzin reddedildi</string>
     <string name="Your_opinion_matter_to_us">Görüşleriniz Bizim İçin Önemli!</string>
     <string name="If_you_enjoy_our">QR Tarayıcımızı beğendiyseniz, bizi Google Play\'de derecelendirmeniz mümkün mü?</string>
-    <string name="title_create">QR Kodu Oluştur</string>
-    <string name="desc_create">QR Kodunda ne oluşturmak istiyorsunuz?</string>
     <string name="title_history">Geçmiş</string>
     <string name="desc_history">Hangi QR kod geçmişine ihtiyacınız var?</string>
     <string name="Writing_something">Bir şey yazmak</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">İnternet yok</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">İnternet bağlantısı yok! Lütfen internet bağlantınızı kontrol edin!</string>
     <string name="try_again">Tekrar deneyin</string>
-    <string name="intro_desc_1">Hızlı QR Tarama</string>
-    <string name="intro_content_1">Yüksek hızlı QR kodu taramasını doğrulukla deneyimleyin.</string>
-    <string name="intro_desc_2">Kendi QR\'nizi Oluşturun</string>
-    <string name="intro_content_2">Bağlantılar, metin ve daha fazlası için kolayca özel QR kodları oluşturun.</string>
-    <string name="intro_desc_3">Herhangi Bir QR Kodunu Tarayın</string>
-    <string name="intro_content_3">İçeriğe anında erişmek için QR kodlarını hızla tarayın. QR Kodu Oluştur</string>
+
+    <string name="intro_desc_1">🚀 QR kodlarını bir flaşta tarayın</string>
+    <string name="intro_content_1">Sizi istediğiniz yere götüren yıldırım hızlı tarama-sürekli ve doğru bir şekilde.</string>
+    <string name="intro_desc_2">✏️ Kendi QR kodunuzu yapın</string>
+    <string name="intro_content_2">Bağlantıları, metni ve daha fazlasını saniyeler içinde özel QR kodlarına çevirin - bu kadar kolay.</string>
+    <string name="intro_desc_3">📲 Bir tarama ile herhangi bir şeyin kilidini açın</string>
+    <string name="intro_content_3">Nokta, tarayın ve gidin - bir kalp atışında web sitelerini, dosyaları ve bilgileri erişin.</string>
+    <string name="customize_your_qr_code">🎨 QR\'nizi tasarlayın, yolunuz</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">QR kodlarınızı gerçekten sizin yapmak için renkler, logolar ve stil ekleyin.</string>
+
     <string name="create_qr_code">Sizin için öner</string>
     <string name="suggest_for_you">Diğer</string>
     <string name="other">Ana Sayfa</string>
@@ -181,8 +183,6 @@
     <string name="color">Logo</string>
     <string name="logo">Şablon</string>
     <string name="template">QR Kodunuzu Özelleştirin</string>
-    <string name="customize_your_qr_code">QR kodlarınızı renkler, logolar ve stillerle kişiselleştirin</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Devam etmek için lütfen dili seçin</string>
     <string name="please_select_language_to_continue">undefined</string>
     <string name="what_problems_do_you_encounter_during_use">Kullanım sırasında karşılaştığınız sorunlar nelerdir?</string>
     <string name="not_much_more_useful_than_the_default_features">Varsayılan özelliklerden çok daha faydalı değil</string>

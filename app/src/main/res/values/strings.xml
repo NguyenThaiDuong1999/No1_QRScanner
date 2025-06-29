@@ -7,8 +7,6 @@
     <string name="Permission_is_denied">Permission is denied</string>
     <string name="Your_opinion_matter_to_us">Your Opinion Matter To Us!</string>
     <string name="If_you_enjoy_our">If you enjoy our QR Code Scanner - QR Reader, would you mind rating us on the Google Play, then?</string>
-    <string name="title_create">Create QR Code</string>
-    <string name="desc_create">What do you want to create QR Code?</string>
     <string name="title_history">History</string>
     <string name="desc_history">Which QR code history do you need?</string>
     <string name="Writing_something">Writing something</string>
@@ -26,12 +24,15 @@
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">There is no internet connection! Please check your internet connection!</string>
 
     <string name="try_again">Try again</string>
-    <string name="intro_desc_1">Fast QR Scanning</string>
-    <string name="intro_content_1">Experience high-speed QR code scanning with accuracy.</string>
-    <string name="intro_desc_2">Create Your Own QR</string>
-    <string name="intro_content_2">Easily generate custom QR codes for links, text, and more.</string>
-    <string name="intro_desc_3">Scan Any QR Code</string>
-    <string name="intro_content_3">Quickly scan QR codes to access content instantly.</string>
+    <string name="intro_desc_1">🚀 Scan QR Codes in a Flash</string>
+    <string name="intro_content_1">Lightning-fast scanning that gets you where you want—instantly and accurately.</string>
+    <string name="intro_desc_2">✏️ Make Your Own QR Code</string>
+    <string name="intro_content_2">Turn links, text, and more into custom QR codes in seconds—it\'s that easy.</string>
+    <string name="intro_desc_3">📲 Unlock Anything with a Scan</string>
+    <string name="intro_content_3">Point, scan, and go—access websites, files, and info in a heartbeat.</string>
+    <string name="customize_your_qr_code">🎨 Design Your QR, Your Way</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Add colors, logos, and style to make your QR codes truly yours.</string>
+
     <string name="create_qr_code">Create QR Code</string>
     <string name="suggest_for_you">Suggest for you</string>
     <string name="other">Other</string>
@@ -185,8 +186,6 @@
     <string name="color">Color</string>
     <string name="logo">Logo</string>
     <string name="template">Template</string>
-    <string name="customize_your_qr_code">Customize Your QR Code</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Personalize your QR codes with colors, logos and styles</string>
     <string name="please_select_language_to_continue">Please select language to continue</string>
     <string name="what_problems_do_you_encounter_during_use">What problems do you encounter during use?</string>
     <string name="not_much_more_useful_than_the_default_features">Not much more useful than the default features</string>
@@ -206,4 +205,7 @@
     <string name="maximum_30_characters">Maximum 30 characters</string>
     <string name="scan_history_not_saved">Scan history not saved</string>
     <string name="some_qr_codes_cannot_be_scanned">Some QR codes cannot be scanned</string>
+    <string name="let_s_start_now">Let\'s start now!</string>
+    <string name="create_your_own_qr_code">Create your own QR Code</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">You don\'t have any scanned copies yet!</string>
 </resources>

@@ -6,8 +6,6 @@
     <string name="Permission_is_denied">Permissão negada</string>
     <string name="Your_opinion_matter_to_us">Sua opinião é importante para nós!</string>
     <string name="If_you_enjoy_our">Se você gosta do nosso QR Scanner, você se importaria em nos avaliar no Google Play?</string>
-    <string name="title_create">Criar QR Code</string>
-    <string name="desc_create">Qual QR Code você quer criar?</string>
     <string name="title_history">Histórico</string>
     <string name="desc_history">Qual histórico de código QR você precisa?</string>
     <string name="Writing_something">Escrevendo algo</string>
@@ -24,12 +22,16 @@
     <string name="no_internet">Sem internet</string>
     <string name="there_is_no_internet_connection_please_check_your_internet_connection">Não há conexão com a internet! Verifique sua conexão com a internet!</string>
     <string name="try_again">Tente novamente</string>
-    <string name="intro_desc_1">Leitura rápida de QR</string>
-    <string name="intro_content_1">Experimente a leitura rápida de QR Code com precisão.</string>
-    <string name="intro_desc_2">Crie seu próprio QR</string>
-    <string name="intro_content_2">Gere facilmente QR codes personalizados para links, texto e muito mais.</string>
-    <string name="intro_desc_3">Leia qualquer QR Code</string>
-    <string name="intro_content_3">Leiture rapidamente QR codes para acessar o conteúdo instantaneamente.</string>
+
+    <string name="intro_desc_1">🚀 Digitalize códigos QR em um flash</string>
+    <string name="intro_content_1">A varredura rápida de raios que o leva aonde quiser-instantavelmente e precisa.</string>
+    <string name="intro_desc_2">✏️ Faça seu próprio código QR</string>
+    <string name="intro_content_2">Transforme links, texto e mais em códigos QR personalizados em segundos - é tão fácil.</string>
+    <string name="intro_desc_3">📲 Desbloqueie qualquer coisa com uma varredura</string>
+    <string name="intro_content_3">Ponto, digitalize e vá - sites de acesso, arquivos e informações em um piscar de olhos.</string>
+    <string name="customize_your_qr_code">🎨 Projete seu qr, seu jeito</string>
+    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Adicione cores, logotipos e estilo para tornar seus códigos QR realmente seus.</string>
+
     <string name="create_qr_code">Criar QR Code</string>
     <string name="suggest_for_you">Sugerir para você</string>
     <string name="other">Outro</string>
@@ -181,8 +183,6 @@
     <string name="color">Cor</string>
     <string name="logo">Logotipo</string>
     <string name="template">Modelo</string>
-    <string name="customize_your_qr_code">Personalize seu código QR</string>
-    <string name="personalize_your_qr_codes_with_colors_logos_and_styles">Personalize seus códigos QR com cores, logotipos e estilos</string>
     <string name="please_select_language_to_continue">Selecione o idioma para continuar</string>
     <string name="what_problems_do_you_encounter_during_use">Quais problemas você encontra durante o uso?</string>
     <string name="not_much_more_useful_than_the_default_features">Não muito mais útil do que as funcionalidades padrão</string>

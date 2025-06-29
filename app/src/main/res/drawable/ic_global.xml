@@ -13,10 +13,10 @@
                 android:startY="16.34"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
@@ -30,10 +30,10 @@
                 android:startY="16.34"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
@@ -47,10 +47,10 @@
                 android:startY="2.98"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
@@ -64,10 +64,10 @@
                 android:startY="3.06"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
@@ -81,10 +81,10 @@
                 android:startY="2"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
@@ -98,10 +98,10 @@
                 android:startY="8.51"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
@@ -115,10 +115,10 @@
                 android:startY="8.51"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
@@ -132,10 +132,10 @@
                 android:startY="17.41"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
@@ -149,10 +149,10 @@
                 android:startY="8"
                 android:type="linear">
                 <item
-                    android:color="#FF0AB1FF"
+                    android:color="#2962FF"
                     android:offset="0" />
                 <item
-                    android:color="#FF0A80FF"
+                    android:color="#2962FF"
                     android:offset="1" />
             </gradient>
         </aapt:attr>
