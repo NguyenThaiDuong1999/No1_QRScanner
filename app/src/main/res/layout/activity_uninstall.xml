@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="18dp">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_back_white"
+        app:tint="#1F1F29" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="85dp"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/be_vn_pro_medium"
+                android:text="@string/why_did_you_uninstall_the_app"
+                android:textColor="#1D1D1D"
+                android:textSize="24sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_answer" />
+
+            <RelativeLayout
+                android:id="@+id/rl_others_content"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/bg_background_home_not_select"
+                android:visibility="gone">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp">
+
+                    <EditText
+                        android:id="@+id/ed_answer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/be_vn_pro_regular"
+                        android:background="@null"
+                        android:gravity="top|start"
+                        android:hint="@string/please_enter_the_reason_why_you_uninstall_the_app_here"
+                        android:maxLines="7"
+                        android:scrollbars="vertical"
+                        android:textColor="#1D1D1D"
+                        android:textColorHint="#C0C0C0"
+                        android:textSize="14sp" />
+                </androidx.core.widget.NestedScrollView>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tv_uninstall"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_btn_gradient"
+        android:ellipsize="end"
+        android:fontFamily="@font/be_vn_pro_regular"
+        android:gravity="center"
+        android:paddingHorizontal="22dp"
+        android:text="@string/uninstall"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_btn_transparent"
+        android:ellipsize="end"
+        android:fontFamily="@font/be_vn_pro_regular"
+        android:gravity="center"
+        android:paddingHorizontal="22dp"
+        android:text="@string/cancel"
+        android:textColor="#1D1D1D"
+        android:textSize="16sp" />
+</LinearLayout>
