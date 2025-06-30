@@ -202,5 +202,7 @@
     <string name="maximum_30_characters">Максимум 30 символов</string>
     <string name="scan_history_not_saved">История сканирования не сохранена</string>
     <string name="some_qr_codes_cannot_be_scanned">Некоторые QR-коды не могут быть отсканированы</string>
-
+    <string name="let_s_start_now">Пусть начнется сейчас!</string>
+    <string name="create_your_own_qr_code">Создайте свой собственный QR -код</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">У вас еще нет отсканированных копий!</string>
 </resources>

@@ -202,5 +202,7 @@
     <string name="maximum_30_characters">最多30个字符</string>
     <string name="scan_history_not_saved">扫描历史未保存</string>
     <string name="some_qr_codes_cannot_be_scanned">一些QR码无法扫描</string>
-
+    <string name="let_s_start_now">现在开始！</string>
+    <string name="create_your_own_qr_code">创建自己的QR代码</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">您还没有任何扫描副本！</string>
 </resources>

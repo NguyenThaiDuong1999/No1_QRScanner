@@ -203,4 +203,7 @@
     <string name="maximum_30_characters">أقصى 30 حرفًا</string>
     <string name="scan_history_not_saved">لم يتم حفظ سجل المسح</string>
     <string name="some_qr_codes_cannot_be_scanned">بعض أكواد QR لا يمكن مسحها</string>
+    <string name="let_s_start_now">دعنا نبدأ الآن!</string>
+    <string name="create_your_own_qr_code">قم بإنشاء رمز الاستجابة السريعة الخاصة بك</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">ليس لديك أي نسخ ممسوحة ضوئيا حتى الآن!</string>
 </resources>

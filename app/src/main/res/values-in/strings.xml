@@ -203,5 +203,7 @@
     <string name="maximum_30_characters">Maksimum 30 karakter</string>
     <string name="scan_history_not_saved">Riwayat pemindaian tidak disimpan</string>
     <string name="some_qr_codes_cannot_be_scanned">Beberapa kode QR tidak dapat dipindai</string>
-
+    <string name="let_s_start_now">Mari kita mulai sekarang!</string>
+    <string name="create_your_own_qr_code">Buat kode QR Anda sendiri</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">Anda belum memiliki salinan yang dipindai!</string>
 </resources>

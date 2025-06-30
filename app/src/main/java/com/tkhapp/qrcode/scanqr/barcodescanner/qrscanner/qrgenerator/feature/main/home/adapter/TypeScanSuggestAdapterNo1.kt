@@ -20,7 +20,7 @@ class TypeScanSuggestAdapterNo1(
     inner class ViewHolder(private val binding: ItemSuggestTypeScanNo1Binding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: TypeScan) {
             binding.apply {
-                layoutContent.setBackgroundColor(Color.parseColor(item.bgColor))
+                layoutContent.setCardBackgroundColor(Color.parseColor(item.bgColor))
                 ivType.setImageResource(item.image)
                 tvTypeName.text = item.name
                 binding.tvTypeName.setTextColor(Color.parseColor(item.colorText))

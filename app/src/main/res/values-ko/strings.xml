@@ -202,5 +202,7 @@
     <string name="maximum_30_characters">최대 30자</string>
     <string name="scan_history_not_saved">스캔 기록이 저장되지 않았습니다</string>
     <string name="some_qr_codes_cannot_be_scanned">일부 QR 코드는 스캔할 수 없습니다</string>
-
+    <string name="let_s_start_now">지금 시작하자!</string>
+    <string name="create_your_own_qr_code">나만의 QR 코드를 만듭니다</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">당신은 아직 스캔 된 사본을 가지고 있지 않습니다!</string>
 </resources>

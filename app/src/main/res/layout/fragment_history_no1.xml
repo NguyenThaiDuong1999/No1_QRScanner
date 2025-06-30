@@ -25,6 +25,7 @@
         <LinearLayout
             android:id="@+id/layout_unselect"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/_10sdp"
             android:layout_height="wrap_content"
             android:visibility="visible"
             android:weightSum="2">
@@ -34,15 +35,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_scan"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/be_vn_pro_semibold"
                     android:text="@string/scanned"
-                    android:textColor="@color/white"
+                    android:padding="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textColor="@color/black_app"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -50,6 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_6sdp"
+                    android:visibility="gone"
                     android:src="@drawable/line_history" />
 
             </LinearLayout>
@@ -63,11 +69,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_create"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/be_vn_pro_semibold"
                     android:text="@string/created"
-                    android:textColor="@color/white"
+                    android:padding="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textColor="@color/black_app"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -75,6 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_6sdp"
+                    android:visibility="gone"
                     android:src="@drawable/line_history" />
 
             </LinearLayout>

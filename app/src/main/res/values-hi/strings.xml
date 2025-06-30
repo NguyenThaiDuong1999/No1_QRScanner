@@ -202,5 +202,7 @@
     <string name="maximum_30_characters">अधिकतम 30 वर्ण</string>
     <string name="scan_history_not_saved">स्कैन इतिहास सेव नहीं हुआ</string>
     <string name="some_qr_codes_cannot_be_scanned">कुछ QR कोड को स्कैन नहीं किया जा सकता</string>
-
+    <string name="let_s_start_now">चलो अब शुरू करते हैं!</string>
+    <string name="create_your_own_qr_code">अपना खुद का क्यूआर कोड बनाएं</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">आपके पास अभी तक कोई स्कैन की गई प्रतियां नहीं हैं!</string>
 </resources>

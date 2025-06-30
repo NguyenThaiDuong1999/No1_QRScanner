@@ -202,5 +202,7 @@
     <string name="maximum_30_characters">最大30文字</string>
     <string name="scan_history_not_saved">スキャン履歴が保存されていません</string>
     <string name="some_qr_codes_cannot_be_scanned">一部のQRコードはスキャンできません</string>
-
+    <string name="let_s_start_now">今すぐ\ \'の開始しましょう！</string>
+    <string name="create_your_own_qr_code">独自のQRコードを作成します</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">あなたはまだスキャンされたコピーを持っていません！</string>
 </resources>

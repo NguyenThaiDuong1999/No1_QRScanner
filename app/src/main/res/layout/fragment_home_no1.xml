@@ -130,7 +130,7 @@
                         android:layout_marginBottom="@dimen/_8sdp"
                         android:orientation="vertical"
                         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                        app:spanCount="3"
+                        app:spanCount="2"
                         tools:listitem="@layout/item_suggest_type_scan_no1" />
 
                 </RelativeLayout>

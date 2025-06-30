@@ -385,6 +385,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/line_main"
+                                android:visibility="gone"
                                 app:layout_constraintBottom_toBottomOf="@id/tv_stylize_template"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@id/tv_stylize_template" />
@@ -453,6 +454,7 @@
                                 android:id="@+id/line"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:visibility="gone"
                                 android:src="@drawable/line_main" />
 
                             <TextView
@@ -464,7 +466,7 @@
                                 android:fontFamily="@font/be_vn_pro_regular"
                                 android:text="@string/text"
                                 android:textColor="#8E8E93"
-                                android:textSize="13sp" />
+                                android:textSize="15sp" />
 
                         </LinearLayout>
 

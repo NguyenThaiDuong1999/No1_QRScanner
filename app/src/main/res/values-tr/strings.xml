@@ -202,5 +202,7 @@
     <string name="maximum_30_characters">Maksimum 30 karakter</string>
     <string name="scan_history_not_saved">Tarama geçmişi kaydedilmedi</string>
     <string name="some_qr_codes_cannot_be_scanned">Bazı QR kodları taranamaz</string>
-
+    <string name="let_s_start_now">Şimdi başlayalım!</string>
+    <string name="create_your_own_qr_code">Kendi QR kodunuzu oluşturun</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">Henüz taranmış kopyanız yok!</string>
 </resources>

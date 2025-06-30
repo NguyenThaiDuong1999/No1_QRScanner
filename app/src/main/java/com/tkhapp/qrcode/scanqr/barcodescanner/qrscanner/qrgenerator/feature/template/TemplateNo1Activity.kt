@@ -285,7 +285,6 @@ class TemplateNo1Activity : BaseNo1Activity<ActivityTemplateNo1Binding>() {
 
     private fun addListBackground() {
         lifecycleScope.launch(Dispatchers.IO) {
-            listBackground.add(BackgroundModelNo1(null))
             listBackground.add(BackgroundModelNo1(R.drawable.ic_background1))
             listBackground.add(BackgroundModelNo1(R.drawable.ic_background2))
             listBackground.add(BackgroundModelNo1(R.drawable.ic_background3))
@@ -303,12 +302,13 @@ class TemplateNo1Activity : BaseNo1Activity<ActivityTemplateNo1Binding>() {
             listBackground.add(BackgroundModelNo1(R.drawable.ic_background15))
             listBackground.add(BackgroundModelNo1(R.drawable.ic_background16))
             listBackground.add(BackgroundModelNo1(R.drawable.ic_background17))
+            listBackground.shuffle()
+            listBackground.add(0, BackgroundModelNo1(null))
         }
     }
 
     private fun addListColor() {
         lifecycleScope.launch(Dispatchers.IO) {
-            listColor.add(ColorModelNo1(null))
             listColor.add(ColorModelNo1("#F37272"))
             listColor.add(ColorModelNo1("#F8DB76"))
             listColor.add(ColorModelNo1("#FFB3DA"))
@@ -326,17 +326,18 @@ class TemplateNo1Activity : BaseNo1Activity<ActivityTemplateNo1Binding>() {
             listColor.add(ColorModelNo1("#FFAB91"))
             listColor.add(ColorModelNo1("#000000"))
             listColor.add(ColorModelNo1("#A8A8A8"))
+            listColor.shuffle()
+            listColor.add(0, ColorModelNo1(null))
         }
     }
 
     private fun addListLogo() {
         lifecycleScope.launch(Dispatchers.IO) {
-            listLogo.add(LogoModelNo1(null))
-            listLogo.add(LogoModelNo1(R.drawable.text_frame_83))
+            /*listLogo.add(LogoModelNo1(R.drawable.text_frame_83))
             listLogo.add(LogoModelNo1(R.drawable.text_frame_84))
             listLogo.add(LogoModelNo1(R.drawable.text_frame_85))
             listLogo.add(LogoModelNo1(R.drawable.text_frame_86))
-            listLogo.add(LogoModelNo1(R.drawable.text_frame_87))
+            listLogo.add(LogoModelNo1(R.drawable.text_frame_87))*/
             listLogo.add(LogoModelNo1(R.drawable.text_frame_88))
             listLogo.add(LogoModelNo1(R.drawable.text_frame_89))
             listLogo.add(LogoModelNo1(R.drawable.text_frame_90))
@@ -346,23 +347,25 @@ class TemplateNo1Activity : BaseNo1Activity<ActivityTemplateNo1Binding>() {
             listLogo.add(LogoModelNo1(R.drawable.text_frame_95))
             listLogo.add(LogoModelNo1(R.drawable.text_frame_96))
             listLogo.add(LogoModelNo1(R.drawable.text_frame_97))
+            listLogo.shuffle()
+            listLogo.add(0, LogoModelNo1(null))
         }
     }
 
     private fun addListTemplate() {
         lifecycleScope.launch(Dispatchers.IO) {
-            listTemplate.add(TemplateModelNo1(null))
-            listTemplate.add(TemplateModelNo1(null))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template1))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template2))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template3))
-            listTemplate.add(TemplateModelNo1(R.drawable.img_template4))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template5))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template6))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template7))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template8))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template9))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template10))
+            listTemplate.shuffle()
+            listTemplate.add(0, TemplateModelNo1(null))
+            listTemplate.add(1, TemplateModelNo1(null))
         }
     }
 

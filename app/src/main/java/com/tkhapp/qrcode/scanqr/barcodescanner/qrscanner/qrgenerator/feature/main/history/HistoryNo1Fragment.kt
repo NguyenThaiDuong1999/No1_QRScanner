@@ -2,6 +2,7 @@ package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.ma
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -431,8 +432,8 @@ class HistoryNo1Fragment : BaseNo1Fragment<FragmentHistoryNo1Binding>() {
     }
 
     private fun setSelectedScanned() {
-        binding.ivScanSelected.visible()
-        binding.ivCreateSelected.gone()
+        binding.tvScan.setBackgroundResource(R.drawable.bg_btn_create_qr)
+        binding.tvCreate.setBackgroundResource(R.drawable.bg_history_non_select)
         historyType = HistoryType.SCANNED
         if (AppDatabaseNo1.getInstance(requireContext()).appDao()
                 .getCountSizeByType(HistoryType.SCANNED) == 0
@@ -447,8 +448,8 @@ class HistoryNo1Fragment : BaseNo1Fragment<FragmentHistoryNo1Binding>() {
     }
 
     private fun setSelectedCreated() {
-        binding.ivScanSelected.gone()
-        binding.ivCreateSelected.visible()
+        binding.tvCreate.setBackgroundResource(R.drawable.bg_btn_create_qr)
+        binding.tvScan.setBackgroundResource(R.drawable.bg_history_non_select)
         historyType = HistoryType.CREATED
         if (AppDatabaseNo1.getInstance(requireContext()).appDao()
                 .getCountSizeByType(HistoryType.CREATED) == 0

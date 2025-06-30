@@ -723,10 +723,10 @@ class ScanResultNo1Activity : BaseNo1Activity<ActivityScanResultNo1Binding>() {
     }
 
     private fun addListTemplate() {
-        listTemplate.add(TemplateModelNo1(R.drawable.img_template1))
+        listTemplate.add(TemplateModelNo1(R.drawable.img_template7))
         listTemplate.add(TemplateModelNo1(R.drawable.img_template2))
-        listTemplate.add(TemplateModelNo1(R.drawable.img_template3))
-        listTemplate.add(TemplateModelNo1(R.drawable.img_template4))
+        listTemplate.add(TemplateModelNo1(R.drawable.img_template8))
+        listTemplate.add(TemplateModelNo1(R.drawable.img_template5))
     }
 
 

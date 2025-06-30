@@ -20,7 +20,7 @@ class LanguageAdapterNo1(
             if (item.isCheck) {
                 binding.layoutItem.setBackgroundResource(R.drawable.bg_lang_selected)
                 binding.ivSelect.setImageResource(R.drawable.ic_lang_selected)
-                binding.tvName.setTextColor(Color.parseColor("#FFFFFF"))
+                binding.tvName.setTextColor(Color.parseColor("#2962FF"))
             } else {
                 binding.layoutItem.setBackgroundResource(R.drawable.bg_lang_unselected)
                 binding.ivSelect.setImageResource(R.drawable.ic_lang_unselected)

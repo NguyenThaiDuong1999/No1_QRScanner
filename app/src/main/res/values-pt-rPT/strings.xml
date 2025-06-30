@@ -202,5 +202,7 @@
     <string name="maximum_30_characters">Máximo 30 caracteres</string>
     <string name="scan_history_not_saved">Histórico de escaneamento não guardado</string>
     <string name="some_qr_codes_cannot_be_scanned">Alguns códigos QR não podem ser lidos</string>
-
+    <string name="let_s_start_now">Vamos começar agora!</string>
+    <string name="create_your_own_qr_code">Crie seu próprio código QR</string>
+    <string name="you_don_t_have_any_scanned_copies_yet">Você ainda não tem cópias digitalizadas!</string>
 </resources>

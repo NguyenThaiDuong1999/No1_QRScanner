@@ -11,15 +11,14 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.scanqr.qrscanner.qrgenerator"
+        applicationId "com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator"
         minSdk 24
         targetSdk 34
         versionCode 100
         versionName "1.0.0"
 
-        //testInstrumentationRunner "androidx.test.runner.AndroidJUnitR unner"
         def formattedDate = new Date().format('MM.dd.yyyy')
-        archivesBaseName = "QRScanner_${versionName}_${formattedDate}"
+        archivesBaseName = "No1_QRScanner_${versionName}_${formattedDate}"
     }
 
     buildTypes {
@@ -106,13 +105,16 @@ dependencies {
     implementation 'com.airbnb.android:lottie:6.5.0'
 
 
-    implementation platform('com.google.firebase:firebase-bom:33.1.2')
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:33.16.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
-//    implementation 'com.google.firebase:firebase-messaging:23.1.2'
-    implementation 'com.google.firebase:firebase-config'
-//
-//    implementation 'com.google.android.gms:play-services-auth:20.5.0'
+    implementation "com.android.billingclient:billing:7.1.1"
+
+    implementation 'com.google.firebase:firebase-analytics:22.5.0'
+    implementation 'com.google.firebase:firebase-messaging:24.1.2'
+    implementation 'com.google.firebase:firebase-crashlytics:19.4.4'
+    implementation 'com.google.firebase:firebase-config:22.1.2'
 
     //Room
     implementation "androidx.room:room-runtime:2.6.1"
