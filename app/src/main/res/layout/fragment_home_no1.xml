@@ -35,7 +35,7 @@
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_80sdp"
                 android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_scan"/>
 
