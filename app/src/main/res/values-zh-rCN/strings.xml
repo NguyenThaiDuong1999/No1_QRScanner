@@ -122,8 +122,8 @@
     <string name="input_the_email_title">输入电子邮件标题</string>
     <string name="input_the_email_content">输入电子邮件内容</string>
     <string name="invalid_email">电子邮件格式无效。</string>
-    <string name="input_the_latitude">输入纬度。例如：-120.3456</string>
-    <string name="input_the_longitude">输入经度。例如：65.4321</string>
+    <string name="input_the_latitude">输入纬度。例如：-11.8793</string>
+    <string name="input_the_longitude">输入经度。例如：12.121</string>
     <string name="phone_number_create">电话号码</string>
     <string name="input_the_company_name">输入公司名称...</string>
     <string name="input_the_name">输入姓名...</string>

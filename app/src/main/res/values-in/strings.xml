@@ -122,8 +122,8 @@
     <string name="input_the_email_title">Masukkan judul email</string>
     <string name="input_the_email_content">Masukkan isi email</string>
     <string name="invalid_email">Format email tidak valid.</string>
-    <string name="input_the_latitude">Masukkan garis lintang. Contoh: -120.3456</string>
-    <string name="input_the_longitude">Masukkan garis bujur. Contoh: 65.4321</string>
+    <string name="input_the_latitude">Masukkan garis lintang. Contoh: -11.8793</string>
+    <string name="input_the_longitude">Masukkan garis bujur. Contoh: 12.121</string>
     <string name="phone_number_create">Nomor telepon</string>
     <string name="input_the_company_name">Masukkan nama perusahaan...</string>
     <string name="input_the_name">Masukkan nama...</string>

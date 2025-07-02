@@ -122,8 +122,8 @@
     <string name="input_the_email_title">ইমেইল শিরোনাম লিখুন</string>
     <string name="input_the_email_content">ইমেইল বিষয়বস্তু লিখুন</string>
     <string name="invalid_email">অবৈধ ইমেইল ফরম্যাট।</string>
-    <string name="input_the_latitude">অক্ষাংশ লিখুন। যেমন: -120.3456</string>
-    <string name="input_the_longitude">দ্রাঘিমাংশ লিখুন। যেমন: 65.4321</string>
+    <string name="input_the_latitude">অক্ষাংশ লিখুন। যেমন: -11.8793</string>
+    <string name="input_the_longitude">দ্রাঘিমাংশ লিখুন। যেমন: 12.121</string>
     <string name="phone_number_create">ফোন নম্বর</string>
     <string name="input_the_company_name">কোম্পানির নাম লিখুন...</string>
     <string name="input_the_name">নাম লিখুন...</string>

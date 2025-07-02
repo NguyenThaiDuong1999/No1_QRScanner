@@ -121,8 +121,8 @@
     <string name="subject">E-posta başlığını girin</string>
     <string name="input_the_email_title">E-posta içeriğini girin</string>
     <string name="input_the_email_content">Geçersiz e-posta biçimi.</string>
-    <string name="invalid_email">Enlemi girin. Örn: -120.3456</string>
-    <string name="input_the_latitude">Boylamı girin. Örn: 65.4321</string>
+    <string name="invalid_email">Enlemi girin. Örn: -11.8793</string>
+    <string name="input_the_latitude">Boylamı girin. Örn: 12.121</string>
     <string name="input_the_longitude">Telefon numarası</string>
     <string name="phone_number_create">Şirket adını girin...</string>
     <string name="input_the_company_name">Adı girin...</string>

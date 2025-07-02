@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">QR Code Scanner - QR Reader</string>
+    <string name="app_name" translatable="false">QR Code Scanner &amp; Generator</string>
 
     <string name="Grant_Permission">Grant Permission</string>
     <string name="Please_grant_all_permissions">Please grant all permissions to access additional functionality.</string>
@@ -124,8 +124,8 @@
     <string name="input_the_email_title">Input the email title</string>
     <string name="input_the_email_content">Input the email content</string>
     <string name="invalid_email">Invalid email format.</string>
-    <string name="input_the_latitude">Input the latitude. Ex: -120.3456</string>
-    <string name="input_the_longitude">Input the longitude. Ex: 65.4321</string>
+    <string name="input_the_latitude">Input the latitude. Ex: -11.8793</string>
+    <string name="input_the_longitude">Input the longitude. Ex: 12.121</string>
     <string name="phone_number_create">Phone number</string>
     <string name="input_the_company_name">Input the company name...</string>
     <string name="input_the_name">Input the name...</string>
@@ -181,7 +181,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="stylize_template">Stylize Template</string>
-    <string name="more">More</string>
+    <string name="more">See more</string>
     <string name="background">Background</string>
     <string name="color">Color</string>
     <string name="logo">Logo</string>

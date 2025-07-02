@@ -122,8 +122,8 @@
     <string name="input_the_email_title">E-Mail-Betreff eingeben</string>
     <string name="input_the_email_content">E-Mail-Inhalt eingeben</string>
     <string name="invalid_email">Ungültiges E-Mail-Format.</string>
-    <string name="input_the_latitude">Breitengrad eingeben, z.B. -120.3456</string>
-    <string name="input_the_longitude">Längengrad eingeben, z.B. 65.4321</string>
+    <string name="input_the_latitude">Breitengrad eingeben, z.B. -11.8793</string>
+    <string name="input_the_longitude">Längengrad eingeben, z.B. 12.121</string>
     <string name="phone_number_create">Telefonnummer</string>
     <string name="input_the_company_name">Firmenname eingeben...</string>
     <string name="input_the_name">Name eingeben...</string>

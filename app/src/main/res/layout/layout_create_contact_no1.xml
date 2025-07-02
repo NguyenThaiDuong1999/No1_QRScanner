@@ -32,8 +32,8 @@
 
                     <ImageView
                         android:id="@+id/line_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
                         android:src="@drawable/line_main" />
 
                     <TextView
@@ -119,8 +119,8 @@
 
                     <ImageView
                         android:id="@+id/line_phone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
                         android:src="@drawable/line_main" />
 
                     <TextView
@@ -206,8 +206,8 @@
 
                     <ImageView
                         android:id="@+id/line_email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
                         android:src="@drawable/line_main" />
 
                     <TextView
@@ -293,8 +293,8 @@
 
                     <ImageView
                         android:id="@+id/line_company"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
                         android:src="@drawable/line_main" />
 
                     <TextView
@@ -379,8 +379,8 @@
 
                     <ImageView
                         android:id="@+id/line_job"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
                         android:src="@drawable/line_main" />
 
                     <TextView
@@ -465,8 +465,8 @@
 
                     <ImageView
                         android:id="@+id/line_address"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
                         android:src="@drawable/line_main" />
 
                     <TextView
@@ -551,8 +551,8 @@
 
                     <ImageView
                         android:id="@+id/line_note"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
                         android:src="@drawable/line_main" />
 
                     <TextView

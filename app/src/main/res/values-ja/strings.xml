@@ -122,8 +122,8 @@
     <string name="input_the_email_title">メールのタイトルを入力してください</string>
     <string name="input_the_email_content">メールの内容を入力してください</string>
     <string name="invalid_email">メールの形式が無効です。</string>
-    <string name="input_the_latitude">緯度を入力してください。例: -120.3456</string>
-    <string name="input_the_longitude">経度を入力してください。例: 65.4321</string>
+    <string name="input_the_latitude">緯度を入力してください。例: -11.8793</string>
+    <string name="input_the_longitude">経度を入力してください。例: 12.121</string>
     <string name="phone_number_create">電話番号</string>
     <string name="input_the_company_name">会社名を入力してください...</string>
     <string name="input_the_name">名前を入力してください...</string>

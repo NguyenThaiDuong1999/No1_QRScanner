@@ -122,8 +122,8 @@
     <string name="input_the_email_title">أدخل عنوان البريد الإلكتروني</string>
     <string name="input_the_email_content">أدخل محتوى البريد الإلكتروني</string>
     <string name="invalid_email">تنسيق البريد الإلكتروني غير صالح.</string>
-    <string name="input_the_latitude">أدخل خط العرض. مثال: -120.3456</string>
-    <string name="input_the_longitude">أدخل خط الطول. مثال: 65.4321</string>
+    <string name="input_the_latitude">أدخل خط العرض. مثال: -123.456</string>
+    <string name="input_the_longitude">أدخل خط الطول. مثال: 11.8793</string>
     <string name="phone_number_create">رقم الهاتف</string>
     <string name="input_the_company_name">أدخل اسم الشركة...</string>
     <string name="input_the_name">أدخل الاسم...</string>

@@ -122,8 +122,8 @@
     <string name="input_the_email_title">Введите заголовок электронного письма</string>
     <string name="input_the_email_content">Введите содержимое электронного письма</string>
     <string name="invalid_email">Недопустимый формат электронного письма.</string>
-    <string name="input_the_latitude">Введите широту. Например: -120.3456</string>
-    <string name="input_the_longitude">Введите долготу. Например: 65.4321</string>
+    <string name="input_the_latitude">Введите широту. Например: -11.8793</string>
+    <string name="input_the_longitude">Введите долготу. Например: 12.121</string>
     <string name="phone_number_create">Номер телефона</string>
     <string name="input_the_company_name">Введите название компании...</string>
     <string name="input_the_name">Введите имя...</string>

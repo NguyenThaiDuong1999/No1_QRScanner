@@ -45,6 +45,7 @@
                 android:id="@+id/linearDots"
                 android:layout_width="wrap_content"
                 android:layout_height="10dp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:minWidth="10dp"
                 android:orientation="horizontal" />
         </LinearLayout>

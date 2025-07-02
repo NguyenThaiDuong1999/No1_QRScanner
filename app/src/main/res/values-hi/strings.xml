@@ -122,8 +122,8 @@
     <string name="input_the_email_title">ईमेल शीर्षक दर्ज करें</string>
     <string name="input_the_email_content">ईमेल सामग्री दर्ज करें</string>
     <string name="invalid_email">अमान्य ईमेल प्रारूप।</string>
-    <string name="input_the_latitude">अक्षांश दर्ज करें। उदाहरण: -120.3456</string>
-    <string name="input_the_longitude">देशांतर दर्ज करें। उदाहरण: 65.4321</string>
+    <string name="input_the_latitude">अक्षांश दर्ज करें। उदाहरण: -11.8793</string>
+    <string name="input_the_longitude">देशांतर दर्ज करें। उदाहरण: 12.121</string>
     <string name="phone_number_create">फ़ोन नंबर</string>
     <string name="input_the_company_name">कंपनी का नाम डालें...</string>
     <string name="input_the_name">नाम डालें...</string>

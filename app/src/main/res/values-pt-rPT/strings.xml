@@ -123,7 +123,7 @@
     <string name="input_the_email_content">Introduza o conteúdo do e-mail</string>
     <string name="invalid_email">Formato de e-mail inválido.</string>
     <string name="input_the_latitude">Introduza a latitude. Exemplo: -120,3456</string>
-    <string name="input_the_longitude">Introduza a longitude. Exemplo: 65.4321</string>
+    <string name="input_the_longitude">Introduza a longitude. Exemplo: 12.121</string>
     <string name="phone_number_create">Número de telefone</string>
     <string name="input_the_company_name">Insira o nome da empresa...</string>
     <string name="input_the_name">Introduza o nome...</string>

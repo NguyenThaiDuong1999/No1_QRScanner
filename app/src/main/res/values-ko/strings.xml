@@ -122,8 +122,8 @@
     <string name="input_the_email_title">이메일 제목을 입력하십시오.</string>
     <string name="input_the_email_content">이메일 내용을 입력하십시오.</string>
     <string name="invalid_email">이메일 형식이 잘못되었습니다.</string>
-    <string name="input_the_latitude">위도를 입력하십시오. 예: -120.3456</string>
-    <string name="input_the_longitude">경도를 입력하십시오. 예: 65.4321</string>
+    <string name="input_the_latitude">위도를 입력하십시오. 예: -11.8793</string>
+    <string name="input_the_longitude">경도를 입력하십시오. 예: 12.121</string>
     <string name="phone_number_create">전화번호</string>
     <string name="input_the_company_name">회사 이름을 입력하세요...</string>
     <string name="input_the_name">이름을 입력하세요...</string>

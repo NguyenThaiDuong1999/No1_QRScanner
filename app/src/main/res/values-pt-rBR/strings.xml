@@ -122,8 +122,8 @@
     <string name="input_the_email_title">Insira o título do e-mail</string>
     <string name="input_the_email_content">Insira o conteúdo do e-mail</string>
     <string name="invalid_email">Formato de e-mail inválido.</string>
-    <string name="input_the_latitude">Insira a latitude. Ex: -120.3456</string>
-    <string name="input_the_longitude">Insira a longitude. Ex: 65.4321</string>
+    <string name="input_the_latitude">Insira a latitude. Ex: -11.8793</string>
+    <string name="input_the_longitude">Insira a longitude. Ex: 12.121</string>
     <string name="phone_number_create">Número de telefone</string>
     <string name="input_the_company_name">Digite o nome da empresa...</string>
     <string name="input_the_name">Digite o nome...</string>
