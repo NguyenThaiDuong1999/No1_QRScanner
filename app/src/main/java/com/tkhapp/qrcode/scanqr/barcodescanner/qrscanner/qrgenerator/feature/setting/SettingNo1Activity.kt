@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.net.toUri
 import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
@@ -188,7 +189,12 @@ class SettingNo1Activity : BaseNo1Activity<ActivitySettingNo1Binding>() {
             }
         }
         binding.llPolicy.tap {
-            startActivity(Intent(this@SettingNo1Activity, PolicyNo1Activity::class.java))
+            val intent = Intent(
+                Intent.ACTION_VIEW,
+                "https://no1-webstore.onrender.com/No1_QRScanner.html".toUri()
+            )
+            startActivity(intent)
+            //startActivity(Intent(this@SettingNo1Activity, PolicyNo1Activity::class.java))
         }
         binding.llRate.tap {
             val dialog =

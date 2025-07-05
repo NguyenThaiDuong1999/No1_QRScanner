@@ -354,7 +354,6 @@ class TemplateNo1Activity : BaseNo1Activity<ActivityTemplateNo1Binding>() {
 
     private fun addListTemplate() {
         lifecycleScope.launch(Dispatchers.IO) {
-            listTemplate.add(TemplateModelNo1(R.drawable.img_template1))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template2))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template3))
             listTemplate.add(TemplateModelNo1(R.drawable.img_template5))
