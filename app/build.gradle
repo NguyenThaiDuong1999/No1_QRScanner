@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator"
         minSdk 24
-        targetSdk 34
+        targetSdk 35
         versionCode 100
         versionName "1.0.0"
 
