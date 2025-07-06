@@ -134,4 +134,10 @@
         android:text="@string/still_want_to_uninstall"
         android:textColor="#1F1F29"
         android:textSize="16sp" />
+
+    <FrameLayout
+        android:id="@+id/fr_ads_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 </LinearLayout>

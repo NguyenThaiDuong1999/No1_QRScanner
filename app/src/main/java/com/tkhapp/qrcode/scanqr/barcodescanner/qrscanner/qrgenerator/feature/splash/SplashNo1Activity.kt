@@ -167,7 +167,7 @@ class SplashNo1Activity : BaseNo1Activity<ActivitySplashNo1Binding>() {
             appId = getString(R.string.app_id),
             jsonIdAdsDefault = jsonIdAdsDefault
         )
-        AsyncSplash.getInstance().setDebug(true)
+        AsyncSplash.getInstance().setDebug(false)
         AsyncSplash.getInstance().setAsyncSplashAds()
         //AsyncSplash.getInstance().setUseIdAdsFromRemoteConfig("id_ads")
         AsyncSplash.getInstance().setListTurnOffRemoteKeys(addListTurnOffRemoteKeys())
@@ -203,7 +203,27 @@ class SplashNo1Activity : BaseNo1Activity<ActivitySplashNo1Binding>() {
 
     private fun addListTurnOffRemoteKeys(): MutableList<String> {
         return mutableListOf(
-
+            Constants.RemoteKeys.banner_setting,
+            Constants.RemoteKeys.inter_home,
+            Constants.RemoteKeys.inter_create,
+            Constants.RemoteKeys.inter_history,
+            Constants.RemoteKeys.collapse_home,
+            Constants.RemoteKeys.collapse_scan,
+            Constants.RemoteKeys.collapse_banner_setting,
+            Constants.RemoteKeys.collapse_result,
+            Constants.RemoteKeys.native_result,
+            Constants.RemoteKeys.collapse_template,
+            Constants.RemoteKeys.native_create,
+            Constants.RemoteKeys.native_intro_full,
+            Constants.RemoteKeys.native_intro_full_2,
+            Constants.RemoteKeys.native_intro_full1,
+            Constants.RemoteKeys.native_intro_full1_2,
+            Constants.RemoteKeys.native_permission,
+            Constants.RemoteKeys.native_intro,
+            Constants.RemoteKeys.native_language,
+            Constants.RemoteKeys.native_wb,
+            Constants.RemoteKeys.resume_wb,
+            Constants.RemoteKeys.native_backup
         )
     }
 
