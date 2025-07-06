@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.amazic.library.Utils.EventTrackingHelper
 import com.amazic.library.Utils.RemoteConfigHelper
 import com.amazic.library.ads.admob.Admob
+import com.amazic.library.organic.TechManager
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.R
@@ -60,7 +61,7 @@ class IntroNo1Activity : BaseNo1Activity<ActivityIntroNo1Binding>() {
     }
 
     private fun showNativeIntroPreloadAtSplash() {
-        if (nativeIntroPreload != null && !isShowNativeIntroPreloadAtSplash) {
+        if (nativeIntroPreload != null && !isShowNativeIntroPreloadAtSplash && !TechManager.getInstance().isTech(this) && Admob.getInstance().showAllAds) {
             val adView: NativeAdView = layoutInflater.inflate(
                 R.layout.native_small_ads_with_button_above,
                 binding.frAds,

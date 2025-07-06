@@ -15,6 +15,7 @@ object Constants {
         const val inter_create = "inter_create"
         const val inter_history = "inter_history"
         const val collapse_home = "collapse_home"
+        const val collapse_scan = "collapse_scan"
         const val collapse_banner_setting = "collapse_banner_setting"
         const val collapse_result = "collapse_result"
         const val native_result = "native_result"

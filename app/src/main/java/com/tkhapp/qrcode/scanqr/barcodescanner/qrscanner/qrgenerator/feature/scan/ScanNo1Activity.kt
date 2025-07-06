@@ -87,6 +87,7 @@ class ScanNo1Activity : BaseNo1Activity<ActivityScanNo1Binding>() {
     private var mediaPlayer: MediaPlayer? = null
 
     override fun initView() {
+        loadCollapseBanner(Constants.RemoteKeys.collapse_scan)
         showViewScan()
         binding.icBack.tap {
             startActivity(Intent(this@ScanNo1Activity, MainNo1Activity::class.java))
