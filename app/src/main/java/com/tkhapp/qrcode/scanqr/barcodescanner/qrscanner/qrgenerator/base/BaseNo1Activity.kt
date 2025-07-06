@@ -7,18 +7,36 @@ import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.FrameLayout
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.amazic.library.Utils.RemoteConfigHelper
+import com.amazic.library.ads.admob.Admob
+import com.amazic.library.ads.admob.AdmobApi
+import com.amazic.library.ads.app_open_ads.AppOpenManager
+import com.amazic.library.ads.banner_ads.BannerBuilder
+import com.amazic.library.ads.banner_ads.BannerManager
+import com.amazic.library.ads.callback.InterCallback
+import com.amazic.library.ads.callback.RewardedCallback
+import com.amazic.library.ads.collapse_banner_ads.CollapseBannerBuilder
+import com.amazic.library.ads.collapse_banner_ads.CollapseBannerManager
+import com.amazic.library.ads.inter_ads.InterManager
+import com.amazic.library.ads.native_ads.NativeBuilder
+import com.amazic.library.ads.native_ads.NativeManager
+import com.amazic.library.ads.reward_ads.RewardManager
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.R
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.create.CreateNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.splash.SplashNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.uninstall.ProblemNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.uninstall.UninstallNo1Activity
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.no_internet.NetworkReceiverNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.no_internet.NoInternetNo1Activity
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.SCREEN
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.SPLASH_ACTIVITY
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.no_internet.NetworkReceiverNo1
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.no_internet.NoInternetNo1Activity
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.SCREEN
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.SPLASH_ACTIVITY
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.SharePrefUtilsNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.SystemUtilNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.toast
@@ -32,6 +50,8 @@ abstract class BaseNo1Activity<VB : ViewBinding> : AppCompatActivity() {
     private var currentApiVersion = 0
     private var networkReceiverNo1: NetworkReceiverNo1? = null
     val sharePref: SharePrefUtilsNo1 by lazy { SharePrefUtilsNo1(this) }
+    var nativeManager: NativeManager? = null
+    var collapseBannerManager: CollapseBannerManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         SystemUtilNo1.setLocale(this)
@@ -83,6 +103,15 @@ abstract class BaseNo1Activity<VB : ViewBinding> : AppCompatActivity() {
 
     abstract fun getViewBinding(): VB
 
+    override fun onResume() {
+        super.onResume()
+        if (Admob.getInstance().checkCondition(this@BaseNo1Activity, Constants.RemoteKeys.resume_wb) &&
+            this@BaseNo1Activity !is SplashNo1Activity
+        ) {
+            AppOpenManager.getInstance().enableAppResumeWithActivity(javaClass)
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(networkReceiverNo1)
@@ -127,4 +156,123 @@ abstract class BaseNo1Activity<VB : ViewBinding> : AppCompatActivity() {
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(newBase?.let { SystemUtilNo1.setLocale(it) })
     }
+
+    fun loadCollapseBanner(adsKey: String) {
+        val frContainerAds = findViewById<FrameLayout>(R.id.collapsible_banner_container_view)
+        if (frContainerAds != null) {
+            val collapseBannerBuilder = CollapseBannerBuilder()
+            collapseBannerBuilder.setListId(AdmobApi.getInstance().getListIDByName(adsKey))
+            collapseBannerManager = CollapseBannerManager(this, frContainerAds, this, collapseBannerBuilder, adsKey)
+            collapseBannerManager?.setIntervalReloadBanner(
+                RemoteConfigHelper.getInstance().get_config_long(this, Constants.RemoteKeys.collapse_banner_reload_interval) * 1000
+            )
+            collapseBannerManager?.setAlwaysReloadOnResume(true)
+        }
+    }
+
+    fun loadBannerAds(
+        frAds: FrameLayout,
+        adsKey: String
+    ) {
+        val bannerBuilder = BannerBuilder(this, frAds, true)
+        bannerBuilder.setListIdAdMain(AdmobApi.getInstance().getListIDByName(adsKey))
+        val bannerManager = BannerManager(this, this, bannerBuilder, adsKey)
+        //bannerManager.setAlwaysReloadOnResume(true)
+        //if load multiple id native
+        /*val bannerBuilder = BannerBuilder(this, frAds, true)
+        bannerBuilder.setListIdAdMain(AdmobApi.getInstance().getListIDByName(adsKey))
+        bannerBuilder.setListIdAdSecondary()
+        bannerBuilder.setListIdAdBackup()
+        val bannerManager = BannerManager(this, this, bannerBuilder, adsKey)
+        bannerManager.remoteKeySecondary = ""
+        bannerManager.remoteKeyBackup = ""
+        bannerManager.setAlwaysReloadOnResume(true)*/
+    }
+
+    fun loadNative(
+        frAds: FrameLayout,
+        adsKeyMain: String,
+        adsKeySecondary: String,
+        adsKeyBackup: String,
+        idLayoutNative: Int,
+        idLayoutShimmer: Int,
+        idNativeMeta: Int = idLayoutNative
+    ) {
+        val nativeBuilder = NativeBuilder(this, frAds, idLayoutShimmer, idLayoutNative, idNativeMeta, true)
+        nativeBuilder.setListIdAdMain(AdmobApi.getInstance().getListIDByName(adsKeyMain))
+        //set secondary list id ads if load double native
+        nativeBuilder.setListIdAdSecondary(AdmobApi.getInstance().getListIDByName(adsKeySecondary))
+        //set backup list id ads if need load backup ads when loading ads fail
+        nativeBuilder.setListIdAdBackup(AdmobApi.getInstance().getListIDByName(adsKeyBackup))
+        nativeManager = NativeManager(this, this, nativeBuilder, adsKeyMain)
+        nativeManager?.remoteKeySecondary = adsKeySecondary
+        nativeManager?.remoteKeyBackup = adsKeyBackup
+        nativeManager?.timeOutCallAds = 12000
+        nativeManager?.setIntervalReloadNative(RemoteConfigHelper.getInstance().get_config_long(this, Constants.RemoteKeys.interval_reload_native) * 1000)
+        nativeManager?.setAlwaysReloadOnResume(true)
+    }
+
+    fun loadAndShowInter(
+        adsKey: String,
+        remoteKey: String,
+        onNextAction: () -> Unit
+    ) {
+        InterManager.loadAndShowInterAds(this, adsKey, remoteKey, object : InterCallback() {
+            override fun onNextAction() {
+                super.onNextAction()
+                onNextAction.invoke()
+            }
+        })
+    }
+
+    fun loadInter(
+        adsKey: String,
+        remoteKey: String,
+    ) {
+        InterManager.loadInterAds(this, adsKey, remoteKey)
+    }
+
+    fun showInter(
+        adsKey: String,
+        remoteKey: String,
+        isReloadAfterShow: Boolean,
+        onNextAction: () -> Unit
+    ) {
+        InterManager.showInterAds(this, adsKey, remoteKey, object : InterCallback() {
+            override fun onNextAction() {
+                super.onNextAction()
+                onNextAction.invoke()
+            }
+        }, true, isReloadAfterShow)
+    }
+
+    fun loadReward(
+        adsKey: String,
+        remoteKey: String,
+    ) {
+        RewardManager.loadRewardAds(this, adsKey, remoteKey)
+    }
+
+    fun showReward(
+        adsKey: String,
+        remoteKey: String,
+        isReloadAfterShow: Boolean,
+        onNextAction: () -> Unit
+    ) {
+        var earnedReward = false
+        RewardManager.showRewardAds(this, adsKey, remoteKey, object : RewardedCallback() {
+            override fun onUserEarnedReward() {
+                super.onUserEarnedReward()
+                earnedReward = true
+            }
+
+            override fun onNextAction() {
+                super.onNextAction()
+                if (earnedReward) {
+                    onNextAction.invoke()
+                }
+            }
+        }, isReloadAfterShow)
+    }
+
 }

@@ -33,6 +33,7 @@
     <uses-permission
         android:name="android.permission.BIND_APPWIDGET"
         tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
 
     <application
@@ -40,13 +41,13 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo"
+        android:hardwareAccelerated="true"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCodeBase"
         tools:replace="android:fullBackupContent">
-
 
         <receiver
             android:name=".feature.main.create.widget.AppWidgetPinnedReceiverNo1"
@@ -63,9 +64,8 @@
                 android:resource="@xml/app_widget_code" />
         </receiver>
 
-
         <receiver
-            android:name=".no_internet.NetworkReceiverNo1"
+            android:name=".feature.no_internet.NetworkReceiverNo1"
             android:exported="true"
             tools:ignore="Instantiatable">
             <intent-filter>
@@ -74,7 +74,13 @@
         </receiver>
 
         <activity
-            android:name=".no_internet.NoInternetNo1Activity"
+            android:name=".feature.welcome_back.WelcomeBackActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivityReskin" />
+
+        <activity
+            android:name=".feature.no_internet.NoInternetNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
@@ -154,7 +160,7 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
         <activity
-            android:name=".feature.language_start_new.LanguageNo1StartNewNo1Activity"
+            android:name=".feature.language_start_new.LanguageStartNo1Activity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivityReskin" />
@@ -194,6 +200,19 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
-    </application>
 
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.NATIVE_AD_DEBUGGER_ENABLED"
+            android:value="false" />
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+            android:value="true" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/app_id" />
+    </application>
 </manifest>

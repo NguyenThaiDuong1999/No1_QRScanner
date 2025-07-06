@@ -9,14 +9,15 @@
         android:id="@+id/fr_lang"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@id/fr_ads"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:background="@color/app_color"/>
+            android:background="@color/app_color"
+            android:scaleType="fitXY" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ct_toolbar"
@@ -34,8 +35,8 @@
                 android:text="@string/language"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -48,10 +49,10 @@
                 android:fontFamily="@font/inter_regular"
                 android:gravity="center"
                 android:lines="2"
-                android:visibility="gone"
                 android:text="@string/please_select_language_to_continue"
                 android:textColor="#D9D9D9"
                 android:textSize="12sp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title" />
@@ -92,4 +93,18 @@
 
     </RelativeLayout>
 
+    <FrameLayout
+        android:id="@+id/fr_ads_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_3sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fr_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_3sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -208,4 +208,7 @@
     <string name="let_s_start_now">Let\'s start now!</string>
     <string name="create_your_own_qr_code">Create your own QR Code</string>
     <string name="you_don_t_have_any_scanned_copies_yet">You don\'t have any scanned copies yet!</string>
+    <string name="welcome">Welcome</string>
+    <string name="thank_you_for_choosing_us">Thank you for choosing us</string>
+    <string name="get_start_now">Get start now</string>
 </resources>

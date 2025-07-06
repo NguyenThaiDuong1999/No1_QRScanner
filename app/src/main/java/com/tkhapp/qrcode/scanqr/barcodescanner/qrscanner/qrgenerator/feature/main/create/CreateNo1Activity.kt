@@ -27,9 +27,9 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.mai
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.model.Type
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.model.TypeUI
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.result_scan.ScanResultNo1Activity
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.KEY_SCREEN_INTO_CREATE
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.KEY_SCREEN_TO_RESULT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.KEY_SCREEN_INTO_CREATE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.KEY_SCREEN_TO_RESULT
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.checkOnEditTextChange
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.getCurrentDate
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.getCurrentHHMM
@@ -51,8 +51,21 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
     private var listMultiple: MutableList<String> = mutableListOf()
     private var screenKey = ""
 
+    private fun loadNativeCreate() {
+        loadNative(
+            binding.frAds,
+            Constants.RemoteKeys.native_create,
+            Constants.RemoteKeys.native_create,
+            Constants.RemoteKeys.native_backup,
+            R.layout.native_large_ads_with_button_above,
+            R.layout.shimmer_native_large_with_button_above
+        )
+    }
+
     @SuppressLint("SetTextI18n")
     override fun initView() {
+        loadNativeCreate()
+
         binding.icBack.tap {
             finish()
         }
@@ -101,19 +114,23 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                     setOnFocus(binding.layoutCreateLong.tvEmpty, binding.layoutCreateLong.cvContent)
                 }
                 binding.layoutCreate.tap {
-                    binding.layoutCreateLong.apply {
-                        if (edtContent.text.toString().trim().isEmpty()) {
-                            showError(tvEmpty, cvContent, getString(R.string.please_enter_content))
-                        } else {
-                            val bundle = Bundle().apply {
-                                putString(
-                                    ConstantsNo1.ScreenKey.CONTENT_TEXT,
-                                    edtContent.text.toString()
-                                )
+                    loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                        onNextAction = {
+                            binding.layoutCreateLong.apply {
+                                if (edtContent.text.toString().trim().isEmpty()) {
+                                    showError(tvEmpty, cvContent, getString(R.string.please_enter_content))
+                                } else {
+                                    val bundle = Bundle().apply {
+                                        putString(
+                                            Constants.ScreenKey.CONTENT_TEXT,
+                                            edtContent.text.toString()
+                                        )
+                                    }
+                                    goToResultActivity(bundle, Type.TEXT.toString(), TypeUI.SINGLE)
+                                }
                             }
-                            goToResultActivity(bundle, Type.TEXT.toString(), TypeUI.SINGLE)
                         }
-                    }
+                    )
                 }
             }
 
@@ -132,23 +149,27 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                     setOnFocus(binding.layoutCreateLong.tvEmpty, binding.layoutCreateLong.cvContent)
                 }
                 binding.layoutCreate.tap {
-                    binding.layoutCreateLong.apply {
-                        if (edtContent.text.toString().trim().isEmpty()) {
-                            showError(tvEmpty, cvContent, getString(R.string.please_enter_content))
-                        } else if (!Patterns.WEB_URL.matcher(edtContent.text.toString().trim())
-                                .matches()
-                        ) {
-                            showError(tvEmpty, cvContent, getString(R.string.invalid_url))
-                        } else {
-                            val bundle = Bundle().apply {
-                                putString(
-                                    ConstantsNo1.ScreenKey.CONTENT_URL,
-                                    binding.layoutCreateLong.edtContent.text.toString()
-                                )
+                    loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                        onNextAction = {
+                            binding.layoutCreateLong.apply {
+                                if (edtContent.text.toString().trim().isEmpty()) {
+                                    showError(tvEmpty, cvContent, getString(R.string.please_enter_content))
+                                } else if (!Patterns.WEB_URL.matcher(edtContent.text.toString().trim())
+                                        .matches()
+                                ) {
+                                    showError(tvEmpty, cvContent, getString(R.string.invalid_url))
+                                } else {
+                                    val bundle = Bundle().apply {
+                                        putString(
+                                            Constants.ScreenKey.CONTENT_URL,
+                                            binding.layoutCreateLong.edtContent.text.toString()
+                                        )
+                                    }
+                                    goToResultActivity(bundle, Type.URL.toString(), TypeUI.SINGLE)
+                                }
                             }
-                            goToResultActivity(bundle, Type.URL.toString(), TypeUI.SINGLE)
                         }
-                    }
+                    )
                 }
             }
 
@@ -162,12 +183,16 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                 wifiHandler.apply {
                     initView()
                     binding.layoutCreate.tap {
-                        onCreateClick { content ->
-                            val bundle = Bundle().apply {
-                                putString(ConstantsNo1.ScreenKey.CONTENT_WIFI, content)
+                        loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                            onNextAction = {
+                                onCreateClick { content ->
+                                    val bundle = Bundle().apply {
+                                        putString(Constants.ScreenKey.CONTENT_WIFI, content)
+                                    }
+                                    goToResultActivity(bundle, Type.WIFI.toString(), TypeUI.MULTIPLE)
+                                }
                             }
-                            goToResultActivity(bundle, Type.WIFI.toString(), TypeUI.MULTIPLE)
-                        }
+                        )
                     }
                 }
             }
@@ -182,12 +207,16 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                 emailHandler.apply {
                     initView()
                     binding.layoutCreate.tap {
-                        onCreateClick { content ->
-                            val bundle = Bundle().apply {
-                                putString(ConstantsNo1.ScreenKey.CONTENT_EMAIL, content)
+                        loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                            onNextAction = {
+                                onCreateClick { content ->
+                                    val bundle = Bundle().apply {
+                                        putString(Constants.ScreenKey.CONTENT_EMAIL, content)
+                                    }
+                                    goToResultActivity(bundle, Type.EMAIL.toString(), TypeUI.MULTIPLE)
+                                }
                             }
-                            goToResultActivity(bundle, Type.EMAIL.toString(), TypeUI.MULTIPLE)
-                        }
+                        )
                     }
                 }
             }
@@ -202,12 +231,16 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                 locationHandler.apply {
                     initView()
                     binding.layoutCreate.tap {
-                        onCreateClick { content ->
-                            val bundle = Bundle().apply {
-                                putString(ConstantsNo1.ScreenKey.CONTENT_LOCATION, content)
+                        loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                            onNextAction = {
+                                onCreateClick { content ->
+                                    val bundle = Bundle().apply {
+                                        putString(Constants.ScreenKey.CONTENT_LOCATION, content)
+                                    }
+                                    goToResultActivity(bundle, Type.LOCATION.toString(), TypeUI.MULTIPLE)
+                                }
                             }
-                            goToResultActivity(bundle, Type.LOCATION.toString(), TypeUI.MULTIPLE)
-                        }
+                        )
                     }
                 }
             }
@@ -222,12 +255,16 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                 contactHandler.apply {
                     initView()
                     binding.layoutCreate.tap {
-                        onCreateClick { content ->
-                            val bundle = Bundle().apply {
-                                putString(ConstantsNo1.ScreenKey.CONTENT_CONTACT, content)
+                        loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                            onNextAction = {
+                                onCreateClick { content ->
+                                    val bundle = Bundle().apply {
+                                        putString(Constants.ScreenKey.CONTENT_CONTACT, content)
+                                    }
+                                    goToResultActivity(bundle, Type.CONTACT.toString(), TypeUI.MULTIPLE)
+                                }
                             }
-                            goToResultActivity(bundle, Type.CONTACT.toString(), TypeUI.MULTIPLE)
-                        }
+                        )
                     }
                 }
             }
@@ -248,21 +285,25 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                     )
                 }
                 binding.layoutCreate.tap {
-                    if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
-                        showError(
-                            binding.layoutCreateShort.tvEmpty,
-                            binding.layoutCreateShort.cvContent,
-                            getString(R.string.please_enter_content)
-                        )
-                    } else {
-                        val bundle = Bundle().apply {
-                            putString(
-                                ConstantsNo1.ScreenKey.CONTENT_PHONE,
-                                "tel:${binding.layoutCreateShort.edtContent.text.toString().trim()}"
-                            )
+                    loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                        onNextAction = {
+                            if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
+                                showError(
+                                    binding.layoutCreateShort.tvEmpty,
+                                    binding.layoutCreateShort.cvContent,
+                                    getString(R.string.please_enter_content)
+                                )
+                            } else {
+                                val bundle = Bundle().apply {
+                                    putString(
+                                        Constants.ScreenKey.CONTENT_PHONE,
+                                        "tel:${binding.layoutCreateShort.edtContent.text.toString().trim()}"
+                                    )
+                                }
+                                goToResultActivity(bundle, Type.PHONE.toString(), TypeUI.SINGLE)
+                            }
                         }
-                        goToResultActivity(bundle, Type.PHONE.toString(), TypeUI.SINGLE)
-                    }
+                    )
                 }
             }
 
@@ -276,12 +317,16 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                 smsHandler.apply {
                     initView()
                     binding.layoutCreate.tap {
-                        onCreateClick { content ->
-                            val bundle = Bundle().apply {
-                                putString(ConstantsNo1.ScreenKey.CONTENT_SMS, content)
+                        loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                            onNextAction = {
+                                onCreateClick { content ->
+                                    val bundle = Bundle().apply {
+                                        putString(Constants.ScreenKey.CONTENT_SMS, content)
+                                    }
+                                    goToResultActivity(bundle, Type.SMS.toString(), TypeUI.MULTIPLE)
+                                }
                             }
-                            goToResultActivity(bundle, Type.SMS.toString(), TypeUI.MULTIPLE)
-                        }
+                        )
                     }
                 }
             }
@@ -302,22 +347,26 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
                     )
                 }
                 binding.layoutCreate.tap {
-                    if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
-                        showError(
-                            binding.layoutCreateShort.tvEmpty,
-                            binding.layoutCreateShort.cvContent,
-                            getString(R.string.please_enter_content)
-                        )
-                    }
-                    if (binding.layoutCreateShort.edtContent.text.toString().trim().isNotEmpty()) {
-                        val bundle = Bundle().apply {
-                            putString(
-                                ConstantsNo1.ScreenKey.CONTENT_TEXT,
-                                binding.layoutCreateShort.edtContent.text.toString().trim()
-                            )
+                    loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                        onNextAction = {
+                            if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
+                                showError(
+                                    binding.layoutCreateShort.tvEmpty,
+                                    binding.layoutCreateShort.cvContent,
+                                    getString(R.string.please_enter_content)
+                                )
+                            }
+                            if (binding.layoutCreateShort.edtContent.text.toString().trim().isNotEmpty()) {
+                                val bundle = Bundle().apply {
+                                    putString(
+                                        Constants.ScreenKey.CONTENT_TEXT,
+                                        binding.layoutCreateShort.edtContent.text.toString().trim()
+                                    )
+                                }
+                                goToResultActivity(bundle, Type.BARCODE.toString(), TypeUI.SINGLE)
+                            }
                         }
-                        goToResultActivity(bundle, Type.BARCODE.toString(), TypeUI.SINGLE)
-                    }
+                    )
                 }
             }
 
@@ -387,122 +436,126 @@ class CreateNo1Activity : BaseNo1Activity<ActivityCreateNo1Binding>() {
             setOnFocus(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent)
         }
         binding.layoutCreate.tap {
-            when (type) {
-                Type.YOUTUBE -> {
-                    Log.i("tag", binding.layoutCreateShort.edtContent.text.toString().trim())
-                    if (!isYouTubeUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
-                        showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_youtube_url))
-                    } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
-                        showError(
-                            binding.layoutCreateShort.tvEmpty,
-                            binding.layoutCreateShort.cvContent,
-                            getString(R.string.please_enter_content)
-                        )
-                    } else {
-                        val bundle = Bundle().apply {
-                            putString(
-                                ConstantsNo1.ScreenKey.CONTENT_URL,
-                                binding.layoutCreateShort.edtContent.text.toString().trim()
-                            )
+            loadAndShowInter(Constants.RemoteKeys.inter_create, Constants.RemoteKeys.inter_create,
+                onNextAction = {
+                    when (type) {
+                        Type.YOUTUBE -> {
+                            Log.i("tag", binding.layoutCreateShort.edtContent.text.toString().trim())
+                            if (!isYouTubeUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
+                                showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_youtube_url))
+                            } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
+                                showError(
+                                    binding.layoutCreateShort.tvEmpty,
+                                    binding.layoutCreateShort.cvContent,
+                                    getString(R.string.please_enter_content)
+                                )
+                            } else {
+                                val bundle = Bundle().apply {
+                                    putString(
+                                        Constants.ScreenKey.CONTENT_URL,
+                                        binding.layoutCreateShort.edtContent.text.toString().trim()
+                                    )
+                                }
+                                goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
+                            }
                         }
-                        goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
+
+                        Type.FACEBOOK -> {
+                            if (!isFacebookUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
+                                showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_fb_url))
+                            } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
+                                showError(
+                                    binding.layoutCreateShort.tvEmpty,
+                                    binding.layoutCreateShort.cvContent,
+                                    getString(R.string.please_enter_content)
+                                )
+                            } else {
+                                val bundle = Bundle().apply {
+                                    putString(
+                                        Constants.ScreenKey.CONTENT_URL,
+                                        binding.layoutCreateShort.edtContent.text.toString().trim()
+                                    )
+                                }
+                                goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
+                            }
+                        }
+
+                        Type.WHATSAPP -> {
+                            if (!isWhatsappUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
+                                showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_whatsapp_url))
+                            } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
+                                showError(
+                                    binding.layoutCreateShort.tvEmpty,
+                                    binding.layoutCreateShort.cvContent,
+                                    getString(R.string.please_enter_content)
+                                )
+                            } else {
+                                val bundle = Bundle().apply {
+                                    putString(
+                                        Constants.ScreenKey.CONTENT_URL,
+                                        binding.layoutCreateShort.edtContent.text.toString().trim()
+                                    )
+                                }
+                                goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
+                            }
+                        }
+
+                        Type.TWITTER -> {
+                            if (!isTwitterUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
+                                showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_twitter_url))
+                            } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
+                                showError(
+                                    binding.layoutCreateShort.tvEmpty,
+                                    binding.layoutCreateShort.cvContent,
+                                    getString(R.string.please_enter_content)
+                                )
+                            } else {
+                                val bundle = Bundle().apply {
+                                    putString(
+                                        Constants.ScreenKey.CONTENT_URL,
+                                        binding.layoutCreateShort.edtContent.text.toString().trim()
+                                    )
+                                }
+                                goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
+                            }
+                        }
+
+                        Type.INSTAGRAM -> {
+                            if (!isInstagramUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
+                                showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_instagram_url))
+                            } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
+                                showError(
+                                    binding.layoutCreateShort.tvEmpty,
+                                    binding.layoutCreateShort.cvContent,
+                                    getString(R.string.please_enter_content)
+                                )
+                            } else {
+                                val bundle = Bundle().apply {
+                                    putString(
+                                        Constants.ScreenKey.CONTENT_URL,
+                                        binding.layoutCreateShort.edtContent.text.toString().trim()
+                                    )
+                                }
+                                goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
+                            }
+                        }
+
+                        else -> {
+
+                        }
                     }
                 }
-
-                Type.FACEBOOK -> {
-                    if (!isFacebookUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
-                        showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_fb_url))
-                    } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
-                        showError(
-                            binding.layoutCreateShort.tvEmpty,
-                            binding.layoutCreateShort.cvContent,
-                            getString(R.string.please_enter_content)
-                        )
-                    } else {
-                        val bundle = Bundle().apply {
-                            putString(
-                                ConstantsNo1.ScreenKey.CONTENT_URL,
-                                binding.layoutCreateShort.edtContent.text.toString().trim()
-                            )
-                        }
-                        goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
-                    }
-                }
-
-                Type.WHATSAPP -> {
-                    if (!isWhatsappUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
-                        showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_whatsapp_url))
-                    } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
-                        showError(
-                            binding.layoutCreateShort.tvEmpty,
-                            binding.layoutCreateShort.cvContent,
-                            getString(R.string.please_enter_content)
-                        )
-                    } else {
-                        val bundle = Bundle().apply {
-                            putString(
-                                ConstantsNo1.ScreenKey.CONTENT_URL,
-                                binding.layoutCreateShort.edtContent.text.toString().trim()
-                            )
-                        }
-                        goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
-                    }
-                }
-
-                Type.TWITTER -> {
-                    if (!isTwitterUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
-                        showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_twitter_url))
-                    } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
-                        showError(
-                            binding.layoutCreateShort.tvEmpty,
-                            binding.layoutCreateShort.cvContent,
-                            getString(R.string.please_enter_content)
-                        )
-                    } else {
-                        val bundle = Bundle().apply {
-                            putString(
-                                ConstantsNo1.ScreenKey.CONTENT_URL,
-                                binding.layoutCreateShort.edtContent.text.toString().trim()
-                            )
-                        }
-                        goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
-                    }
-                }
-
-                Type.INSTAGRAM -> {
-                    if (!isInstagramUrl(binding.layoutCreateShort.edtContent.text.toString().trim())) {
-                        showError(binding.layoutCreateShort.tvEmpty, binding.layoutCreateShort.cvContent, getString(R.string.invalid_instagram_url))
-                    } else if (binding.layoutCreateShort.edtContent.text.toString().trim().isEmpty()) {
-                        showError(
-                            binding.layoutCreateShort.tvEmpty,
-                            binding.layoutCreateShort.cvContent,
-                            getString(R.string.please_enter_content)
-                        )
-                    } else {
-                        val bundle = Bundle().apply {
-                            putString(
-                                ConstantsNo1.ScreenKey.CONTENT_URL,
-                                binding.layoutCreateShort.edtContent.text.toString().trim()
-                            )
-                        }
-                        goToResultActivity(bundle, type.toString(), TypeUI.SINGLE)
-                    }
-                }
-
-                else -> {
-
-                }
-            }
+            )
         }
     }
 
     private fun goToResultActivity(bundle: Bundle, type: String, typeUI: TypeUI) {
         bundle.apply {
             putString(KEY_SCREEN_TO_RESULT, "create")
-            putString(ConstantsNo1.ScreenKey.CODE_TYPE, type)
-            putString(ConstantsNo1.ScreenKey.UI_CODE_TYPE, typeUI.toString())
-            putString(ConstantsNo1.ScreenKey.TIME_HOUR, getCurrentHHMM())
-            putString(ConstantsNo1.ScreenKey.TIME_DATE, getCurrentDate())
+            putString(Constants.ScreenKey.CODE_TYPE, type)
+            putString(Constants.ScreenKey.UI_CODE_TYPE, typeUI.toString())
+            putString(Constants.ScreenKey.TIME_HOUR, getCurrentHHMM())
+            putString(Constants.ScreenKey.TIME_DATE, getCurrentDate())
         }
         val intent = Intent(this@CreateNo1Activity, ScanResultNo1Activity::class.java)
         intent.putExtras(bundle)

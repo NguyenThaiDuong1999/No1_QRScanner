@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.R
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo1Fragment
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.databinding.FragmentHomeNo1Binding
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.create.CreateNo1Activity
@@ -16,7 +17,7 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.mai
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.model.Type
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.model.TypeScan
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.scan.ScanNo1Activity
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.checkCameraPermission
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.goToSettings
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.showRationaleDialog
@@ -35,22 +36,37 @@ class HomeNo1Fragment : BaseNo1Fragment<FragmentHomeNo1Binding>() {
         initListSuggest()
         initListOther()
         binding.rcvSuggest.adapter = TypeScanSuggestAdapterNo1(listSuggest) { type ->
-            val intent = Intent(requireContext(), CreateNo1Activity::class.java).apply {
-                putExtra(ConstantsNo1.ScreenKey.KEY_SCREEN_INTO_CREATE, type.type.toString())
-            }
-            startActivity(intent)
+            (requireActivity() as BaseNo1Activity<*>).loadAndShowInter(
+                Constants.RemoteKeys.inter_home, Constants.RemoteKeys.inter_home,
+                onNextAction = {
+                    val intent = Intent(requireContext(), CreateNo1Activity::class.java).apply {
+                        putExtra(Constants.ScreenKey.KEY_SCREEN_INTO_CREATE, type.type.toString())
+                    }
+                    startActivity(intent)
+                }
+            )
         }
         binding.rcvOther.adapter = TypeScanAdapterNo1(listOther) { type ->
-            val intent = Intent(requireContext(), CreateNo1Activity::class.java).apply {
-                putExtra(ConstantsNo1.ScreenKey.KEY_SCREEN_INTO_CREATE, type.type.toString())
-            }
-            startActivity(intent)
+            (requireActivity() as BaseNo1Activity<*>).loadAndShowInter(
+                Constants.RemoteKeys.inter_home, Constants.RemoteKeys.inter_home,
+                onNextAction = {
+                    val intent = Intent(requireContext(), CreateNo1Activity::class.java).apply {
+                        putExtra(Constants.ScreenKey.KEY_SCREEN_INTO_CREATE, type.type.toString())
+                    }
+                    startActivity(intent)
+                }
+            )
         }
         binding.cvScan.tap {
             requireActivity().checkCameraPermission(
                 onPermissionGranted = {
-                    startActivity(Intent(requireContext(), ScanNo1Activity::class.java))
-                    requireActivity().finish()
+                    (requireActivity() as BaseNo1Activity<*>).loadAndShowInter(
+                        Constants.RemoteKeys.inter_home, Constants.RemoteKeys.inter_home,
+                        onNextAction = {
+                            startActivity(Intent(requireContext(), ScanNo1Activity::class.java))
+                            requireActivity().finish()
+                        }
+                    )
                 },
                 onShowRationale = {
                     requireActivity().showRationaleDialog(getString(R.string.this_app_need_camera_permission_to_enhance_feature)) {

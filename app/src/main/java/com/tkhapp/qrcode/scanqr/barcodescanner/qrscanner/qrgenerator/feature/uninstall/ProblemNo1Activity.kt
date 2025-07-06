@@ -4,9 +4,9 @@ import android.os.Bundle
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.databinding.ActivityProblemNo1Binding
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.MainNo1Activity
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.no_internet.NoInternetNo1Activity
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.SCREEN
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.SPLASH_ACTIVITY
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.no_internet.NoInternetNo1Activity
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.SCREEN
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.SPLASH_ACTIVITY
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.SystemUtilNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.launchActivity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.tap

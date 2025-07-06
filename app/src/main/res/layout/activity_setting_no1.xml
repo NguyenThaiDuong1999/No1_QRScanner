@@ -40,115 +40,126 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_setting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginVertical="@dimen/_20sdp"
         app:cardCornerRadius="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/collapsible_banner_container_view"
         app:layout_constraintTop_toBottomOf="@id/header">
 
-        <RelativeLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_12sdp">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/ll_language"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginHorizontal="@dimen/_12sdp">
 
-                <include
-                    android:id="@+id/layout_lang"
-                    layout="@layout/item_setting_no1"
+                <LinearLayout
+                    android:id="@+id/ll_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <include
+                        android:id="@+id/layout_lang"
+                        layout="@layout/item_setting_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_vibrate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_language"
+                    android:layout_marginTop="@dimen/_12sdp">
+
+                    <include
+                        android:id="@+id/layout_vibrate"
+                        layout="@layout/item_setting_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_sound"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_vibrate"
+                    android:layout_marginTop="@dimen/_12sdp">
 
-            <LinearLayout
-                android:id="@+id/ll_vibrate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ll_language"
-                android:layout_marginTop="@dimen/_12sdp">
+                    <include
+                        android:id="@+id/layout_sound"
+                        layout="@layout/item_setting_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                <include
-                    android:id="@+id/layout_vibrate"
-                    layout="@layout/item_setting_no1"
+                <LinearLayout
+                    android:id="@+id/ll_open_url"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_sound"
+                    android:layout_marginTop="@dimen/_12sdp">
 
-            <LinearLayout
-                android:id="@+id/ll_sound"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ll_vibrate"
-                android:layout_marginTop="@dimen/_12sdp">
+                    <include
+                        android:id="@+id/layout_open_url"
+                        layout="@layout/item_setting_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                <include
-                    android:id="@+id/layout_sound"
-                    layout="@layout/item_setting_no1"
+                <LinearLayout
+                    android:id="@+id/ll_share"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_open_url"
+                    android:layout_marginTop="@dimen/_12sdp">
 
-            <LinearLayout
-                android:id="@+id/ll_open_url"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ll_sound"
-                android:layout_marginTop="@dimen/_12sdp">
+                    <include
+                        android:id="@+id/layout_share"
+                        layout="@layout/item_setting_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                <include
-                    android:id="@+id/layout_open_url"
-                    layout="@layout/item_setting_no1"
+                <LinearLayout
+                    android:id="@+id/ll_rate"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_share"
+                    android:layout_marginTop="@dimen/_12sdp">
 
-            <LinearLayout
-                android:id="@+id/ll_share"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ll_open_url"
-                android:layout_marginTop="@dimen/_12sdp">
+                    <include
+                        android:id="@+id/layout_rate"
+                        layout="@layout/item_setting_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                <include
-                    android:id="@+id/layout_share"
-                    layout="@layout/item_setting_no1"
+                <LinearLayout
+                    android:id="@+id/ll_policy"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_rate"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_20sdp">
 
-            <LinearLayout
-                android:id="@+id/ll_rate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ll_share"
-                android:layout_marginTop="@dimen/_12sdp">
-
-                <include
-                    android:id="@+id/layout_rate"
-                    layout="@layout/item_setting_no1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_policy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ll_rate"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:layout_marginBottom="@dimen/_20sdp">
-
-                <include
-                    android:id="@+id/layout_privacy"
-                    layout="@layout/item_setting_no1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </RelativeLayout>
-
+                    <include
+                        android:id="@+id/layout_privacy"
+                        layout="@layout/item_setting_no1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/collapsible_banner_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

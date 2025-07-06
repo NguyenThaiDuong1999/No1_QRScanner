@@ -3,22 +3,44 @@ package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.pe
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.util.Log
 import androidx.core.app.ActivityCompat
+import com.amazic.library.Utils.EventTrackingHelper
+import com.amazic.library.Utils.RemoteConfigHelper
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.R
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.databinding.ActivityPermissionNo1Binding
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.dialog.ConfirmDialogNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.MainNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.helper.SharePrefHelper
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_SETTING_CONTINUE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_SETTING_CONTINUE
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.goToSettings
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.isLargerTiramisu
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.tap
 
 
 class PermissionNo1Activity : BaseNo1Activity<ActivityPermissionNo1Binding>() {
+    private val TAG = "PermissionNo1Activity"
+    private var countOpenSplash = 1L
+
+    companion object {
+        var isLogEventPermissionOpen = false
+    }
 
     override fun initView() {
+        countOpenSplash = RemoteConfigHelper.getInstance().get_config_long(this, "countOpenSplash")
+        if (!isLogEventPermissionOpen) {
+            EventTrackingHelper.logEvent(this@PermissionNo1Activity, Constants.TrackingKeys.permission_open)
+            if (countOpenSplash <= 10) {
+                Log.d(TAG, "initView: $countOpenSplash")
+                EventTrackingHelper.logEvent(this, Constants.TrackingKeys.permission_open + "_${countOpenSplash}")
+            }
+            isLogEventPermissionOpen = true
+        }
+
+        loadNativePer()
+
         binding.switchCamera.tap {
             if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
                 val confirmDialogNo1 = ConfirmDialogNo1(
@@ -90,12 +112,26 @@ class PermissionNo1Activity : BaseNo1Activity<ActivityPermissionNo1Binding>() {
         }
 
         binding.tvContinue.tap {
+            EventTrackingHelper.logEvent(this@PermissionNo1Activity, Constants.TrackingKeys.permission_continue_click)
+            if (countOpenSplash <= 9) {
+                EventTrackingHelper.logEvent(this, Constants.TrackingKeys.permission_continue_click + "_${countOpenSplash + 1}")
+            }
             SharePrefHelper(this).saveBoolean(IS_SETTING_CONTINUE, true)
             startActivity(Intent(this, MainNo1Activity::class.java))
             finish()
         }
     }
 
+    private fun loadNativePer() {
+        loadNative(
+            binding.frAds,
+            Constants.RemoteKeys.native_permission,
+            Constants.RemoteKeys.native_permission,
+            Constants.RemoteKeys.native_backup,
+            R.layout.native_large_ads_with_button_above,
+            R.layout.shimmer_native_large_with_button_above
+        )
+    }
 
     override fun onResume() {
         super.onResume()

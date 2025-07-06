@@ -2,12 +2,12 @@ package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.ma
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.R
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo1Fragment
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.database.AppDatabaseNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.database.HistoryModel
@@ -17,8 +17,8 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.dialog.Conf
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.MainNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.model.Type
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.result_scan.ScanResultNo1Activity
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.KEY_SCREEN_TO_RESULT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.KEY_SCREEN_TO_RESULT
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.clearCacheDirectory
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.copyText
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.generate128Barcode
@@ -205,7 +205,11 @@ class HistoryNo1Fragment : BaseNo1Fragment<FragmentHistoryNo1Binding>() {
             requireActivity().runOnUiThread {
                 historyAdapterNo1 = HistoryAdapterNo1(listCreated,
                     onItemClick = {
-                        gotoResult(it)
+                        (requireActivity() as BaseNo1Activity<*>).loadAndShowInter(Constants.RemoteKeys.inter_history, Constants.RemoteKeys.inter_history,
+                            onNextAction = {
+                                gotoResult(it)
+                            }
+                        )
                     },
                     onItemLongClick = {
                         historyAdapterNo1?.setSelectedModeOn()
@@ -298,7 +302,11 @@ class HistoryNo1Fragment : BaseNo1Fragment<FragmentHistoryNo1Binding>() {
             requireActivity().runOnUiThread {
                 historyAdapterNo1 = HistoryAdapterNo1(listScanned,
                     onItemClick = { item ->
-                        gotoResult(item)
+                        (requireActivity() as BaseNo1Activity<*>).loadAndShowInter(Constants.RemoteKeys.inter_history, Constants.RemoteKeys.inter_history,
+                            onNextAction = {
+                                gotoResult(item)
+                            }
+                        )
                     },
                     onItemLongClick = {
                         historyAdapterNo1?.setSelectedModeOn()
@@ -369,56 +377,56 @@ class HistoryNo1Fragment : BaseNo1Fragment<FragmentHistoryNo1Binding>() {
     private fun gotoResult(item: HistoryModel) {
         val bundle = Bundle().apply {
             putString(KEY_SCREEN_TO_RESULT, "history")
-            putString(ConstantsNo1.ScreenKey.CODE_TYPE, item.codeType)
-            putString(ConstantsNo1.ScreenKey.UI_CODE_TYPE, item.uiType)
+            putString(Constants.ScreenKey.CODE_TYPE, item.codeType)
+            putString(Constants.ScreenKey.UI_CODE_TYPE, item.uiType)
             when (item.codeType) {
                 Type.TEXT.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_TEXT,
+                    Constants.ScreenKey.CONTENT_TEXT,
                     item.contentRawValue
                 )
 
                 Type.URL.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_URL,
+                    Constants.ScreenKey.CONTENT_URL,
                     item.contentRawValue
                 )
 
                 Type.WIFI.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_WIFI,
+                    Constants.ScreenKey.CONTENT_WIFI,
                     item.contentRawValue
                 )
 
                 Type.EMAIL.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_EMAIL,
+                    Constants.ScreenKey.CONTENT_EMAIL,
                     item.contentRawValue
                 )
 
                 Type.SMS.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_SMS,
+                    Constants.ScreenKey.CONTENT_SMS,
                     item.contentRawValue
                 )
 
                 Type.PHONE.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_PHONE,
+                    Constants.ScreenKey.CONTENT_PHONE,
                     item.contentRawValue
                 )
 
                 Type.LOCATION.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_LOCATION,
+                    Constants.ScreenKey.CONTENT_LOCATION,
                     item.contentRawValue
                 )
 
                 Type.CONTACT.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_CONTACT,
+                    Constants.ScreenKey.CONTENT_CONTACT,
                     item.contentRawValue
                 )
 
                 Type.BARCODE.toString() -> putString(
-                    ConstantsNo1.ScreenKey.CONTENT_TEXT,
+                    Constants.ScreenKey.CONTENT_TEXT,
                     item.contentRawValue
                 )
 
                 Type.FACEBOOK.toString(), Type.YOUTUBE.toString(), Type.INSTAGRAM.toString(), Type.TWITTER.toString(), Type.WHATSAPP.toString()
-                    -> putString(ConstantsNo1.ScreenKey.CONTENT_URL, item.contentRawValue)
+                    -> putString(Constants.ScreenKey.CONTENT_URL, item.contentRawValue)
             }
         }
         val intent = Intent(requireContext(), ScanResultNo1Activity::class.java)

@@ -36,23 +36,23 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.tem
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.template.logo.LogoModelNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.template.template_sub.TemplateModelNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.helper.SharePrefHelper
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.BACKGROUND
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.CHANGE_TEMPLATE_DONE
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.COLOR
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.LOGO
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.TEMPLATE
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_CONTACT
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_EMAIL
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_LOCATION
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_PHONE
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_SMS
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_TEXT
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_URL
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_WIFI
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.KEY_SCREEN_TO_RESULT
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.TIME_DATE
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.TIME_HOUR
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.BACKGROUND
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.CHANGE_TEMPLATE_DONE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.COLOR
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.LOGO
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.TEMPLATE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_CONTACT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_EMAIL
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_LOCATION
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_PHONE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_SMS
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_TEXT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_URL
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_WIFI
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.KEY_SCREEN_TO_RESULT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.TIME_DATE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.TIME_HOUR
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.callNow
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.checkExternalStoragePermission
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.clearCacheDirectory
@@ -132,8 +132,22 @@ class ScanResultNo1Activity : BaseNo1Activity<ActivityScanResultNo1Binding>() {
         var myTemplateBitmap: Bitmap? = null
     }
 
+    private fun loadNativeResult() {
+        loadNative(
+            binding.frAds,
+            Constants.RemoteKeys.native_result,
+            Constants.RemoteKeys.native_result,
+            Constants.RemoteKeys.native_backup,
+            R.layout.native_language_custom,
+            R.layout.shimmer_native_lang_custom
+        )
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     override fun initView() {
+        loadNativeResult()
+        loadCollapseBanner(Constants.RemoteKeys.collapse_result)
+
         LocalBroadcastManager.getInstance(this@ScanResultNo1Activity).registerReceiver(broadcastReceiver, IntentFilter(CHANGE_TEMPLATE_DONE))
         if (isLGDevice()) {
             binding.layoutShareCreateLg.visible()
@@ -143,8 +157,8 @@ class ScanResultNo1Activity : BaseNo1Activity<ActivityScanResultNo1Binding>() {
             binding.layoutActionCreate.visible()
         }
 
-        codeType = intent.extras?.getString(ConstantsNo1.ScreenKey.CODE_TYPE).toString()
-        uiCodeType = intent.extras?.getString(ConstantsNo1.ScreenKey.UI_CODE_TYPE).toString()
+        codeType = intent.extras?.getString(Constants.ScreenKey.CODE_TYPE).toString()
+        uiCodeType = intent.extras?.getString(Constants.ScreenKey.UI_CODE_TYPE).toString()
         timeHour = intent.extras?.getString(TIME_HOUR).toString()
         timeDate = intent.extras?.getString(TIME_DATE).toString()
         keyScreen = intent.extras?.getString(KEY_SCREEN_TO_RESULT).toString()

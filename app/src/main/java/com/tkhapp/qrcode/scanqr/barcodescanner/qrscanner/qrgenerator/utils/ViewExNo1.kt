@@ -37,6 +37,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.amazic.library.ads.app_open_ads.AppOpenManager
 import com.google.android.material.card.MaterialCardView
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
@@ -65,6 +66,7 @@ import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import androidx.core.net.toUri
 
 fun AppCompatActivity.launchActivity(
     option: Bundle,
@@ -353,8 +355,9 @@ fun detectCode(bitmap: Bitmap): String {
     }
 }
 
-fun Context.shareCode(path: String) {
+fun Activity.shareCode(path: String) {
     try {
+        AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
         val uri = FileProvider.getUriForFile(
             applicationContext,
             BuildConfig.APPLICATION_ID + ".provider",
@@ -372,15 +375,17 @@ fun Context.shareCode(path: String) {
 }
 
 fun Activity.openWebSearch(keyWord: String) {
+    AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
     val query = URLEncoder.encode(keyWord, "utf-8")
     val url = "http://www.google.com/search?q=$query"
     val intent = Intent(Intent.ACTION_VIEW)
-    intent.data = Uri.parse(url)
+    intent.data = url.toUri()
     launchActivityIntent(intent)
 }
 
 fun Activity.openUrl(url: String) {
-    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+    AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
+    val browserIntent = Intent(Intent.ACTION_VIEW, url.toUri())
     launchActivityIntent(browserIntent)
 }
 
@@ -416,6 +421,7 @@ fun Activity.toast(msg: String) {
 }
 
 fun Activity.shareText(msg: String) {
+    AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
     val intent = Intent().apply {
         action = Intent.ACTION_SEND
         putExtra(Intent.EXTRA_TEXT, msg)
@@ -426,8 +432,9 @@ fun Activity.shareText(msg: String) {
 }
 
 fun Activity.sendEmail(address: String, subject: String, body: String) {
+    AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
     val intent = Intent(Intent.ACTION_SEND)
-    intent.setDataAndType(Uri.parse(address), "message/rfc822")
+    intent.setDataAndType(address.toUri(), "message/rfc822")
     intent.setPackage("com.google.android.gm")
     if (intent.resolveActivity(packageManager) != null) {
         intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(address))
@@ -440,7 +447,8 @@ fun Activity.sendEmail(address: String, subject: String, body: String) {
 }
 
 fun Activity.sendSMS(phoneNumber: String, message: String) {
-    val uri = Uri.parse("smsto:$phoneNumber")
+    AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
+    val uri = "smsto:$phoneNumber".toUri()
     val intent = Intent(Intent.ACTION_SENDTO, uri)
     intent.putExtra("sms_body", message)
     try {
@@ -451,7 +459,8 @@ fun Activity.sendSMS(phoneNumber: String, message: String) {
 }
 
 fun Activity.callNow(phoneNumber: String) {
-    val uri = Uri.parse("tel:$phoneNumber")
+    AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
+    val uri = "tel:$phoneNumber".toUri()
     val intent = Intent(Intent.ACTION_DIAL, uri)
     try {
         launchActivityIntent(intent)
@@ -461,7 +470,8 @@ fun Activity.callNow(phoneNumber: String) {
 }
 
 fun Activity.openMap(lat: String, lng: String) {
-    val uri = Uri.parse("geo:$lat,$lng")
+    AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
+    val uri = "geo:$lat,$lng".toUri()
     val intent = Intent(Intent.ACTION_VIEW, uri)
     intent.setPackage("com.google.android.apps.maps")
     try {

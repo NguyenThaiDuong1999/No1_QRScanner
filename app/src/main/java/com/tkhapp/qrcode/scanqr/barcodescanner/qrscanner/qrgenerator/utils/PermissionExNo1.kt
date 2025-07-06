@@ -11,6 +11,7 @@ import android.provider.Settings
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.amazic.library.ads.app_open_ads.AppOpenManager
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.R
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.dialog.ConfirmDialogNo1
 
@@ -87,6 +88,7 @@ fun FragmentActivity.showRationaleDialog(desc: String, onGoToSetting: () -> Unit
 }
 
 fun Fragment.goToSettings() {
+    AppOpenManager.getInstance().disableAppResumeWithActivity(requireActivity().javaClass)
     val intent =
         Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
     val uri =
@@ -96,6 +98,7 @@ fun Fragment.goToSettings() {
 }
 
 fun Activity.goToSettings() {
+    AppOpenManager.getInstance().disableAppResumeWithActivity(this.javaClass)
     val intent =
         Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
     val uri =

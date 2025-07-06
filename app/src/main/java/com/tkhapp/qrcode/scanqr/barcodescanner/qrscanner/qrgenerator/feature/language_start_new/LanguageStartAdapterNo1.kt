@@ -9,8 +9,8 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.databinding
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.gone
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.visible
 
-class LanguageStartNewAdapterNo1(
-    private val lists: List<LanguageModelNewNo1>,
+class LanguageStartAdapterNo1(
+    private val lists: List<LanguageModelNo1>,
     private val iClickLanguageNo1: IClickLanguageNo1,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -41,7 +41,7 @@ class LanguageStartNewAdapterNo1(
     }
 
     inner class LanguageViewHolder(val binding: ItemLanguageNo1Binding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: LanguageModelNewNo1, position: Int) {
+        fun bind(data: LanguageModelNo1, position: Int) {
             data.image?.let { binding.civLogo.setImageResource(it) }
             binding.tvName.text = data.languageName
 
@@ -66,7 +66,7 @@ class LanguageStartNewAdapterNo1(
             }
         }
 
-        private fun onItemClick(data: LanguageModelNewNo1) {
+        private fun onItemClick(data: LanguageModelNo1) {
             isClicked = true
             iClickLanguageNo1.onClick(data)
             for (item in lists) {

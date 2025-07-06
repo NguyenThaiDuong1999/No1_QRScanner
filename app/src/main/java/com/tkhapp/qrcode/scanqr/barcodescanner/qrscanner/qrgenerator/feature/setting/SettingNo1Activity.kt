@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.net.toUri
+import com.amazic.library.ads.app_open_ads.AppOpenManager
 import com.google.android.gms.tasks.Task
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
@@ -18,11 +19,10 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.databinding.ActivitySettingNo1Binding
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.language.LanguageNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.helper.SharePrefHelper
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.rate.RatingDialogNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.rate.SharePrefUtilsNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_OPEN_URL
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_SOUND
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_VIBRATE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_OPEN_URL
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_SOUND
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_VIBRATE
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.SystemUtilNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.gone
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.logI
@@ -42,7 +42,7 @@ class SettingNo1Activity : BaseNo1Activity<ActivitySettingNo1Binding>() {
     }
 
     override fun initData() {
-
+        loadCollapseBanner(Constants.RemoteKeys.collapse_banner_setting)
         isVibrate = SharePrefHelper(this).getBoolean(IS_VIBRATE)
         isSound = SharePrefHelper(this).getBoolean(IS_SOUND)
         isOpenUrl = SharePrefHelper(this).getBoolean(IS_OPEN_URL)
@@ -177,6 +177,7 @@ class SettingNo1Activity : BaseNo1Activity<ActivitySettingNo1Binding>() {
         }
         binding.llShare.tap {
             try {
+                AppOpenManager.getInstance().disableAppResumeWithActivity(javaClass)
                 val intent = Intent(Intent.ACTION_SEND)
                 intent.type = "text/plain"
                 intent.putExtra(Intent.EXTRA_SUBJECT, R.string.app_name)
@@ -189,12 +190,12 @@ class SettingNo1Activity : BaseNo1Activity<ActivitySettingNo1Binding>() {
             }
         }
         binding.llPolicy.tap {
+            AppOpenManager.getInstance().disableAppResumeWithActivity(javaClass)
             val intent = Intent(
                 Intent.ACTION_VIEW,
                 "https://no1-webstore.onrender.com/No1_QRScanner.html".toUri()
             )
             startActivity(intent)
-            //startActivity(Intent(this@SettingNo1Activity, PolicyNo1Activity::class.java))
         }
         binding.llRate.tap {
             val dialog =
@@ -221,6 +222,7 @@ class SettingNo1Activity : BaseNo1Activity<ActivitySettingNo1Binding>() {
 
                 override fun rating(rate: Float) {
                     Log.i("rating", "on")
+                    AppOpenManager.getInstance().disableAppResumeWithActivity(javaClass)
                     this@SettingNo1Activity.let { activity ->
                         val manager: ReviewManager = ReviewManagerFactory.create(activity)
                         val request: Task<ReviewInfo> = manager.requestReviewFlow()

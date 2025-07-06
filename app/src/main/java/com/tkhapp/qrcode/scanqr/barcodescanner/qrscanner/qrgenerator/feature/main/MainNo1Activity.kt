@@ -13,9 +13,10 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.mai
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.scan.ScanNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.setting.SettingNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.helper.SharePrefHelper
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_OPEN_URL
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_SOUND
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_VIBRATE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_OPEN_URL
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_SOUND
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_VIBRATE
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.checkCameraPermission
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.goToSettings
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.gone
@@ -24,6 +25,7 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.tap
 
 class MainNo1Activity : BaseNo1Activity<ActivityMainNo1Binding>() {
     override fun initView() {
+        loadCollapseBanner(Constants.RemoteKeys.collapse_home)
         showViewHomeClick()
         if (!SharePrefHelper(this).contain(IS_VIBRATE)) {
             SharePrefHelper(this).saveBoolean(IS_VIBRATE, true)
@@ -35,9 +37,11 @@ class MainNo1Activity : BaseNo1Activity<ActivityMainNo1Binding>() {
             SharePrefHelper(this).saveBoolean(IS_OPEN_URL, false)
         }
         binding.llHome.tap {
+            collapseBannerManager?.reloadAdNow()
             showViewHomeClick()
         }
         binding.llHistory.tap {
+            collapseBannerManager?.reloadAdNow()
             showViewHistoryClick()
         }
         binding.ivSetting.tap {

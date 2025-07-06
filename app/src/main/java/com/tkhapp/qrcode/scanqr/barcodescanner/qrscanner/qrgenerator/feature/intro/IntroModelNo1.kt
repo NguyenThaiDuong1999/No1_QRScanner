@@ -4,4 +4,5 @@ data class IntroModelNo1(
     val image: Int,
     val desc: String,
     val content: String,
+    var type: String
 )

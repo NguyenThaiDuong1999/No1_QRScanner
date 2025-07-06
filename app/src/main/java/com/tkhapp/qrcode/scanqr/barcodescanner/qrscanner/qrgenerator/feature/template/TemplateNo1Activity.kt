@@ -30,11 +30,12 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.tem
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.template.logo.LogoModelNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.template.template_sub.TemplateAdapterNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.template.template_sub.TemplateModelNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.BACKGROUND
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.CHANGE_TEMPLATE_DONE
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.COLOR
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.LOGO
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.IntentKey.TEMPLATE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.BACKGROUND
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.CHANGE_TEMPLATE_DONE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.COLOR
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.LOGO
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.IntentKey.TEMPLATE
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.checkExternalStoragePermission
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.getRoundedCornerBitmap
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.goToSettings
@@ -67,8 +68,8 @@ class TemplateNo1Activity : BaseNo1Activity<ActivityTemplateNo1Binding>() {
 
     override fun getViewBinding(): ActivityTemplateNo1Binding = ActivityTemplateNo1Binding.inflate(layoutInflater)
 
-
     override fun initView() {
+        loadCollapseBanner(Constants.RemoteKeys.collapse_template)
         tabBinding = LayoutTabTemplateNo1Binding.bind(binding.includeTabTemplate.root)
         if (!isTaskRoot
             && intent.hasCategory(Intent.CATEGORY_LAUNCHER)
@@ -369,6 +370,7 @@ class TemplateNo1Activity : BaseNo1Activity<ActivityTemplateNo1Binding>() {
     }
 
     private fun changeBottomNavStatus(view: View) {
+        collapseBannerManager?.reloadAdNow()
         when (view) {
             tabBinding.llBackground -> {
                 //tabBinding.llBackgroundImage.setBackgroundResource(R.drawable.bg_bottom_nav_select)

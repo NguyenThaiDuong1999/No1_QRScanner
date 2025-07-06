@@ -1,7 +1,38 @@
 package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils
 
 
-object ConstantsNo1 {
+object Constants {
+    object TrackingKeys {
+        const val splash_open = "splash_open"
+        const val language_fo_open = "language_fo_open"
+        const val permission_open = "permission_open"
+        const val permission_continue_click = "permission_continue_click"
+    }
+
+    object RemoteKeys {
+        const val banner_setting = "banner_setting"
+        const val inter_home = "inter_home"
+        const val inter_create = "inter_create"
+        const val inter_history = "inter_history"
+        const val collapse_home = "collapse_home"
+        const val collapse_banner_setting = "collapse_banner_setting"
+        const val collapse_result = "collapse_result"
+        const val native_result = "native_result"
+        const val collapse_template = "collapse_template"
+        const val native_create = "native_create"
+        const val native_intro_full = "native_intro_full"
+        const val native_intro_full_2 = "native_intro_full_2"
+        const val native_intro_full1 = "native_intro_full1"
+        const val native_intro_full1_2 = "native_intro_full1_2"
+        const val native_permission = "native_permission"
+        const val native_intro = "native_intro"
+        const val native_language = "native_language"
+        const val native_wb = "native_wb"
+        const val resume_wb = "resume_wb"
+        const val native_backup = "native_backup"
+        const val collapse_banner_reload_interval = "collapse_banner_reload_interval"
+        const val interval_reload_native = "interval_reload_native"
+    }
 
     object SharePrefKey {
         const val IS_SETTING_CONTINUE = "is_setting_continue"
@@ -11,11 +42,6 @@ object ConstantsNo1 {
         const val IS_RATED = "is_rate"
         const val RATE_COUNTER = "rate_counter"
     }
-
-//    var nativeCategory: NativeAd? = null
-//    var nativeDrawingStep: NativeAd? = null
-//    var interstitialAdTraceToSketch: InterstitialAd? = null
-//    var interstitialAdTraceToSketchTutorial: InterstitialAd? = null
 
     object ScreenKey {
         const val SCREEN = "SCREEN"
@@ -44,6 +70,7 @@ object ConstantsNo1 {
         const val CONTENT_BARCODE = "content_barcode"
         const val KEY_SCREEN_INTO_CREATE = "key_screen_into_create"
     }
+
     object IntentKey {
         const val CHANGE_TEMPLATE_DONE = "CHANGE_TEMPLATE_DONE"
         const val BACKGROUND = "BACKGROUND"

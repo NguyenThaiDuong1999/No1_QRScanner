@@ -1,4 +1,4 @@
-package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.no_internet
+package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.no_internet
 
 import android.content.BroadcastReceiver
 import android.content.Context

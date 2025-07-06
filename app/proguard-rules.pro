@@ -51,5 +51,5 @@
 -keep class okhttp3.** { *; }
 -keep interface okhttp3.** { *; }
 -dontwarn okhttp3.**
--keep class com.amazic.ads.** { *; }
+-keep class com.amazic.library.** { *; }
 -keep class retrofit2.**{ *; }

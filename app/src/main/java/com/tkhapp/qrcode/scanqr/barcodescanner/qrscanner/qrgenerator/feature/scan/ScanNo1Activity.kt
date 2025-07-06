@@ -23,6 +23,7 @@ import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import com.amazic.library.ads.app_open_ads.AppOpenManager
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.mlkit.vision.barcode.BarcodeScanner
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
@@ -42,22 +43,22 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.res
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.scan.batch.ScanBatchResultNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.helper.SharePrefHelper
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.helper.VibrateHelperNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_CONTACT
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_EMAIL
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_LOCATION
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_PHONE
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_SMS
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_TEXT
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_WIFI
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.FACEBOOK_SIGN
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.INSTAGRAM_SIGN
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.TWITTER_SIGN
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.WHATSAPP_SIGN
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.YOUTUBE_SIGN
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_OPEN_URL
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_SOUND
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.SharePrefKey.IS_VIBRATE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_CONTACT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_EMAIL
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_LOCATION
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_PHONE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_SMS
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_TEXT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_WIFI
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.FACEBOOK_SIGN
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.INSTAGRAM_SIGN
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.TWITTER_SIGN
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.WHATSAPP_SIGN
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.YOUTUBE_SIGN
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_OPEN_URL
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_SOUND
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.SharePrefKey.IS_VIBRATE
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.checkExternalStoragePermission
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.detectCodeInImageWithMLKit
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.getCurrentDate
@@ -130,7 +131,7 @@ class ScanNo1Activity : BaseNo1Activity<ActivityScanNo1Binding>() {
                     Barcode.TYPE_URL -> {
                         val url = barcode.url?.url.toString()
                         val bundle = Bundle().apply {
-                            putString(ConstantsNo1.ScreenKey.CONTENT_URL, barcode.url?.url)
+                            putString(Constants.ScreenKey.CONTENT_URL, barcode.url?.url)
                         }
                         if (url.contains(FACEBOOK_SIGN)) {
                             if (scanTypeNo1 == ScanTypeNo1.SINGLE) {
@@ -462,11 +463,11 @@ class ScanNo1Activity : BaseNo1Activity<ActivityScanNo1Binding>() {
 
     private fun goToScanResult(bundle: Bundle, type: Type, typeUI: TypeUI) {
         bundle.apply {
-            putString(ConstantsNo1.ScreenKey.CODE_TYPE, type.toString())
-            putString(ConstantsNo1.ScreenKey.UI_CODE_TYPE, typeUI.toString())
-            putString(ConstantsNo1.ScreenKey.KEY_SCREEN_TO_RESULT, "scan")
-            putString(ConstantsNo1.ScreenKey.TIME_HOUR, getCurrentHHMM())
-            putString(ConstantsNo1.ScreenKey.TIME_DATE, getCurrentDate())
+            putString(Constants.ScreenKey.CODE_TYPE, type.toString())
+            putString(Constants.ScreenKey.UI_CODE_TYPE, typeUI.toString())
+            putString(Constants.ScreenKey.KEY_SCREEN_TO_RESULT, "scan")
+            putString(Constants.ScreenKey.TIME_HOUR, getCurrentHHMM())
+            putString(Constants.ScreenKey.TIME_DATE, getCurrentDate())
         }
         val intent = Intent(this, ScanResultNo1Activity::class.java).apply {
             putExtras(bundle)
@@ -498,6 +499,7 @@ class ScanNo1Activity : BaseNo1Activity<ActivityScanNo1Binding>() {
     }
 
     private fun showViewGallery() {
+        AppOpenManager.getInstance().disableAppResumeWithActivity(javaClass)
         binding.layoutBatchOn.gone()
         setSelectedAction(binding.layoutGallery, binding.ivGallery, binding.tvGallery)
         setUnSelectedAction(binding.layoutBatch, binding.ivBatch, binding.tvBatch)
@@ -527,7 +529,7 @@ class ScanNo1Activity : BaseNo1Activity<ActivityScanNo1Binding>() {
                                         val url = barcode.url?.url.toString()
                                         val bundle = Bundle().apply {
                                             putString(
-                                                ConstantsNo1.ScreenKey.CONTENT_URL,
+                                                Constants.ScreenKey.CONTENT_URL,
                                                 barcode.url?.url
                                             )
                                         }

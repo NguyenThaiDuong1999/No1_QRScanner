@@ -1,4 +1,4 @@
-package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.no_internet
+package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.no_internet
 
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.databinding.ActivityNoInternetNo1Binding

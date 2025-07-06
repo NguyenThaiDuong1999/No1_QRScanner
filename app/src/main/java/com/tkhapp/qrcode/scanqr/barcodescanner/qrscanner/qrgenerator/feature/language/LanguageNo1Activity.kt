@@ -4,6 +4,7 @@ import android.content.Intent
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.base.BaseNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.databinding.ActivityLanguageNo1Binding
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.MainNo1Activity
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.SystemUtilNo1
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.invisible
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.tap
@@ -23,6 +24,7 @@ class LanguageNo1Activity : BaseNo1Activity<ActivityLanguageNo1Binding>() {
     }
 
     override fun initView() {
+        loadBannerAds(binding.frAds, Constants.RemoteKeys.banner_setting)
         setCodeLanguage()
         adapter = LanguageAdapterNo1(SystemUtilNo1.listLanguage()) {
             binding.ivDone.visible()

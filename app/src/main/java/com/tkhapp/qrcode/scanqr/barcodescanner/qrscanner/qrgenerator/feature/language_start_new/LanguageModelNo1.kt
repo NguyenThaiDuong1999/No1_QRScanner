@@ -1,6 +1,6 @@
 package com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.language_start_new
 
-data class LanguageModelNewNo1(
+data class LanguageModelNo1(
     var languageName: String,
     var isoLanguage: String,
     var isCheck: Boolean,

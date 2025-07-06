@@ -135,7 +135,7 @@
             android:layout_marginTop="@dimen/_12sdp"
             android:fontFamily="@font/be_vn_pro_regular"
             android:gravity="center_horizontal"
-            android:text="You don't have any scanned copies yet!"
+            android:text="@string/you_don_t_have_any_scanned_copies_yet"
             android:textColor="#8E8E93"
             android:textSize="13sp" />
 

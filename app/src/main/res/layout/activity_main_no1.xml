@@ -17,8 +17,8 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/iv_setting"
             android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_toStartOf="@id/iv_setting"
             android:fontFamily="@font/be_vn_pro_semibold"
             android:text="@string/app_name"
             android:textColor="@color/white"
@@ -37,21 +37,20 @@
         android:id="@+id/fr_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/_70sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/footer"
         app:layout_constraintTop_toBottomOf="@id/header" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/collapsible_banner_container_view">
 
         <RelativeLayout
             android:id="@+id/rl_tab"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_15sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@id/ic_scan">
 
@@ -146,7 +145,7 @@
         <ImageView
             android:id="@+id/ic_scan"
             android:layout_width="1dp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_height="@dimen/_60sdp"
             android:layout_centerInParent="true"
             android:layout_marginBottom="@dimen/_10sdp"
             android:src="@drawable/ic_scan"
@@ -166,7 +165,7 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/collapsible_banner_container_view">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -186,4 +185,9 @@
 
     </LinearLayout>
 
+    <FrameLayout
+        android:id="@+id/collapsible_banner_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

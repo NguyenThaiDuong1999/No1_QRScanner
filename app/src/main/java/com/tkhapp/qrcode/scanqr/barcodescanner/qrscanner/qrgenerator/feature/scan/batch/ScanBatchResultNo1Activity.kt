@@ -11,15 +11,15 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.dialog.Conf
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.model.Type
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.main.model.TypeUI
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.result_scan.ScanResultNo1Activity
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_CONTACT
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_EMAIL
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_LOCATION
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_PHONE
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_SMS
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_TEXT
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_URL
-import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.ConstantsNo1.ScreenKey.CONTENT_WIFI
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_CONTACT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_EMAIL
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_LOCATION
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_PHONE
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_SMS
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_TEXT
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_URL
+import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants.ScreenKey.CONTENT_WIFI
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.gone
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.isLargerTiramisu
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.tap
@@ -175,9 +175,9 @@ class ScanBatchResultNo1Activity : BaseNo1Activity<ActivityBatchResultNo1Binding
 
     private fun goToResult(content: String, keyData: String, type: Type, uiType: TypeUI) {
         val bundle = Bundle().apply {
-            putString(ConstantsNo1.ScreenKey.KEY_SCREEN_TO_RESULT, "batch")
-            putString(ConstantsNo1.ScreenKey.CODE_TYPE, type.toString())
-            putString(ConstantsNo1.ScreenKey.UI_CODE_TYPE, uiType.toString())
+            putString(Constants.ScreenKey.KEY_SCREEN_TO_RESULT, "batch")
+            putString(Constants.ScreenKey.CODE_TYPE, type.toString())
+            putString(Constants.ScreenKey.UI_CODE_TYPE, uiType.toString())
             putString(keyData, content)
         }
         val intent = Intent(this, ScanResultNo1Activity::class.java)
