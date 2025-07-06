@@ -206,4 +206,7 @@
     <string name="let_s_start_now">Lassen Sie uns jetzt anfangen!</string>
     <string name="create_your_own_qr_code">Erstellen Sie Ihren eigenen QR -Code</string>
     <string name="you_don_t_have_any_scanned_copies_yet">Sie haben noch keine gescannten Kopien!</string>
+    <string name="welcome">Willkommen</string>
+    <string name="thank_you_for_choosing_us">Vielen Dank, dass Sie uns ausgewählt haben</string>
+    <string name="get_start_now">Mach jetzt an</string>
 </resources>

@@ -206,4 +206,7 @@
     <string name="let_s_start_now">دعنا نبدأ الآن!</string>
     <string name="create_your_own_qr_code">قم بإنشاء رمز الاستجابة السريعة الخاصة بك</string>
     <string name="you_don_t_have_any_scanned_copies_yet">ليس لديك أي نسخ ممسوحة ضوئيا حتى الآن!</string>
+    <string name="welcome">مرحباً</string>
+    <string name="thank_you_for_choosing_us">شكرا لك على اختيارك لنا</string>
+    <string name="get_start_now">ابدأ الآن</string>
 </resources>

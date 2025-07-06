@@ -206,4 +206,7 @@
     <string name="let_s_start_now">Mari kita mulai sekarang!</string>
     <string name="create_your_own_qr_code">Buat kode QR Anda sendiri</string>
     <string name="you_don_t_have_any_scanned_copies_yet">Anda belum memiliki salinan yang dipindai!</string>
+    <string name="welcome">Selamat datang</string>
+    <string name="thank_you_for_choosing_us">Terima kasih telah memilih kami</string>
+    <string name="get_start_now">Mulailah sekarang</string>
 </resources>

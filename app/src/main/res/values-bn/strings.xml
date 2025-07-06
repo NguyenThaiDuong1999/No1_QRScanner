@@ -206,4 +206,7 @@
     <string name="let_s_start_now">আসুন এখনই শুরু করুন!</string>
     <string name="create_your_own_qr_code">আপনার নিজস্ব কিউআর কোড তৈরি করুন</string>
     <string name="you_don_t_have_any_scanned_copies_yet">আপনার কাছে এখনও কোনও স্ক্যান করা অনুলিপি নেই!</string>
+    <string name="welcome">স্বাগতম</string>
+    <string name="thank_you_for_choosing_us">আমাদের বেছে নেওয়ার জন্য আপনাকে ধন্যবাদ</string>
+    <string name="get_start_now">এখনই শুরু করুন</string>
 </resources>

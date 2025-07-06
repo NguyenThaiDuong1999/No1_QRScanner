@@ -205,4 +205,7 @@
     <string name="let_s_start_now">Пусть начнется сейчас!</string>
     <string name="create_your_own_qr_code">Создайте свой собственный QR -код</string>
     <string name="you_don_t_have_any_scanned_copies_yet">У вас еще нет отсканированных копий!</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="thank_you_for_choosing_us">Спасибо, что выбрали нас</string>
+    <string name="get_start_now">Начните сейчас</string>
 </resources>
