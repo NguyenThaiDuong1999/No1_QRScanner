@@ -11,6 +11,7 @@ object Constants {
 
     object RemoteKeys {
         const val banner_setting = "banner_setting"
+        const val inter_intro = "inter_intro"
         const val inter_home = "inter_home"
         const val inter_create = "inter_create"
         const val inter_history = "inter_history"

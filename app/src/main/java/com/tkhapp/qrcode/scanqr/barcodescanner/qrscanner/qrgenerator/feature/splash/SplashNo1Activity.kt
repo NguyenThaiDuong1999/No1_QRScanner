@@ -167,7 +167,7 @@ class SplashNo1Activity : BaseNo1Activity<ActivitySplashNo1Binding>() {
             appId = getString(R.string.app_id),
             jsonIdAdsDefault = jsonIdAdsDefault
         )
-        AsyncSplash.getInstance().setDebug(false)
+        AsyncSplash.getInstance().setDebug(true)
         AsyncSplash.getInstance().setAsyncSplashAds()
         //AsyncSplash.getInstance().setUseIdAdsFromRemoteConfig("id_ads")
         AsyncSplash.getInstance().setListTurnOffRemoteKeys(addListTurnOffRemoteKeys())

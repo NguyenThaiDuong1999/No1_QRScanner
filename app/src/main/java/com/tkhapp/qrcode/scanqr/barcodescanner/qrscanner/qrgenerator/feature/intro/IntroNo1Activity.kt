@@ -163,13 +163,17 @@ class IntroNo1Activity : BaseNo1Activity<ActivityIntroNo1Binding>() {
     }
 
     private fun startNextAct() {
-        if (SharePrefHelper(this).getBoolean(IS_SETTING_CONTINUE)) {
-            startActivity(Intent(this, MainNo1Activity::class.java))
-            finish()
-        } else {
-            startActivity(Intent(this, PermissionNo1Activity::class.java))
-            finish()
-        }
+        loadAndShowInter(Constants.RemoteKeys.inter_intro, Constants.RemoteKeys.inter_intro,
+            onNextAction = {
+                if (SharePrefHelper(this).getBoolean(IS_SETTING_CONTINUE)) {
+                    startActivity(Intent(this, MainNo1Activity::class.java))
+                    finish()
+                } else {
+                    startActivity(Intent(this, PermissionNo1Activity::class.java))
+                    finish()
+                }
+            }
+        )
     }
 
     override fun initData() {
