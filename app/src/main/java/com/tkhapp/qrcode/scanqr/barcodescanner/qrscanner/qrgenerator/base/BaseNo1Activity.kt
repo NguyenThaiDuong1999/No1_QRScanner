@@ -90,7 +90,7 @@ abstract class BaseNo1Activity<VB : ViewBinding> : AppCompatActivity() {
                 }
             }
         }
-        registerReceiver(networkReceiverNo1, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        //registerReceiver(networkReceiverNo1, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 onBackPressCustom()
@@ -114,7 +114,7 @@ abstract class BaseNo1Activity<VB : ViewBinding> : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        unregisterReceiver(networkReceiverNo1)
+        //unregisterReceiver(networkReceiverNo1)
     }
 
     fun showActivity(activity: Class<*>, bundle: Bundle?) {
