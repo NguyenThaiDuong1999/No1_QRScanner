@@ -24,6 +24,7 @@ import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.lan
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.uninstall.ProblemNo1Activity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.feature.welcome_back.WelcomeBackActivity
 import com.tkhapp.qrcode.scanqr.barcodescanner.qrscanner.qrgenerator.utils.Constants
+import java.util.ArrayList
 
 @SuppressLint("CustomSplashScreen")
 class SplashNo1Activity : BaseNo1Activity<ActivitySplashNo1Binding>() {
@@ -168,8 +169,6 @@ class SplashNo1Activity : BaseNo1Activity<ActivitySplashNo1Binding>() {
             jsonIdAdsDefault = jsonIdAdsDefault
         )
         AsyncSplash.getInstance().setDebug(true)
-        AsyncSplash.getInstance().setAsyncSplashAds()
-        //AsyncSplash.getInstance().setUseIdAdsFromRemoteConfig("id_ads")
         AsyncSplash.getInstance().setListTurnOffRemoteKeys(addListTurnOffRemoteKeys())
         AsyncSplash.getInstance().setInitWelcomeBackBelowResumeAds(WelcomeBackActivity::class.java)
         AsyncSplash.getInstance().handleAsync(
@@ -204,6 +203,7 @@ class SplashNo1Activity : BaseNo1Activity<ActivitySplashNo1Binding>() {
     private fun addListTurnOffRemoteKeys(): MutableList<String> {
         return mutableListOf(
             Constants.RemoteKeys.banner_setting,
+            Constants.RemoteKeys.inter_intro,
             Constants.RemoteKeys.inter_home,
             Constants.RemoteKeys.inter_create,
             Constants.RemoteKeys.inter_history,

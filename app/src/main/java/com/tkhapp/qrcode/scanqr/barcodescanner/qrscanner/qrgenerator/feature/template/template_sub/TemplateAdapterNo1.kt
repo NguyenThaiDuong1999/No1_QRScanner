@@ -24,25 +24,26 @@ class TemplateAdapterNo1(
             when (position) {
                 0 -> {
                     binding.ct.setBackgroundResource(R.drawable.img_none_backround_color)
+                    binding.cvContainer.gone()
                     binding.cv.gone()
                     binding.rlSelect.gone()
                 }
 
                 1 -> {
                     binding.ct.setBackgroundResource(R.drawable.img_pick_image_logo)
+                    binding.cvContainer.gone()
                     binding.cv.gone()
                     binding.rlSelect.gone()
                 }
 
                 else -> {
-                    templateModelNo1.templateImage?.let { binding.rl.setBackgroundResource(it) }
+                    templateModelNo1.templateImage?.let {
+                        Glide.with(context).load(it).into(binding.imgBg)
+                    }
                     Glide.with(context).load(R.drawable.img_qr_template).into(binding.imgTemplate)
                     binding.cv.visible()
                     if (templateModelNo1.isSelect) {
                         binding.rlSelect.visible()
-                        binding.blurView.setupWith(binding.root)
-                            .setFrameClearDrawable(binding.blurView.background)
-                            .setBlurRadius(2f)
                     } else {
                         binding.rlSelect.gone()
                     }
