@@ -193,7 +193,7 @@ class SettingNo1Activity : BaseNo1Activity<ActivitySettingNo1Binding>() {
             AppOpenManager.getInstance().disableAppResumeWithActivity(javaClass)
             val intent = Intent(
                 Intent.ACTION_VIEW,
-                "https://no1-webstore.onrender.com/No1_QRScanner.html".toUri()
+                "https://dtechgroup.onrender.com/No1_QRScanner.html".toUri()
             )
             startActivity(intent)
         }
